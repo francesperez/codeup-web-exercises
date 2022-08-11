@@ -20,9 +20,121 @@
           return (celsius * 9 / 5) + 32;
       }
       let number = 20;
-      if (number % 2 === 0){
-          console.log("That number is even.");
+      //if (number % 2 === 0) {
+      //    console.log("That number is even.");
+      //} else {
+      //    console.log("That number is odd.")
+      //}
+     function isOdd(number) {
+         return Math.abs(number) % 2 === 1;
+     }
+      //the reason why this comes out as true/false is because comparison operators automatically make the expression a boolean.
+      // if (number % 5 === 0 && number % 3 === 0){
+      //     console.log("That number is divisible by both 5 and 3.");
+      // } else {
+      //     console.log("That number is either not divisible by 5 or not divisible by 3, or both.");
+      // }
+      function divisibleby5or3(number){
+          return number % 5 === 0 || number % 3 === 0;
       }
+    function div7or3(number){
+         return number % 7 === 0 || number % 3 === 0;
+    }
+    function div3or2(number){
+         return number % 3 === 0 || number % 2 === 0;
+    }
+    function oddordiv3(number){
+         return Math.abs(number) % 2 === 1 || number % 3 === 0;
+    }
+//adding two strings together is called congagnation
+//     let myName = "Frances";
+//     let myLastName = "Perez";
+//     let myFullName = myName + " " + myLastName
+
+      function fullName(firstName, middleName, lastName){
+            return `${firstName} ${middleName} ${lastName}`;
+        }
+      //Mini-exercise.  Write a function that takes a person's first, middle, and last names and returns their full name.
+            //each thing that is listed here is a parameter, this is included within the function and separated by commas
+      //Mini exercise. Write a function that takes a house number, street name, city, state, and zip code and returns the full address.
+      //Bonus.  Write a function that takes a number representing the temperature and a boolean representing whether the temperature is Fahrenheit or not.  If it is Fahrenheit, the function converts to Celsius.  Otherwise, it converts to Fahrenheit.Look up the Fahrenheit to Celsius conversion formula online.
+      //Bonus.  Change your functions for liters-gallons and miles-kilometers so they convert both ways.
+   // let houseNum = "123"
+   // let street = "Sunny Lane"
+   // let city = "Anytown"
+   // let state = "USA"
+   // let zipCode = "98765"
+   // let fullAddress = houseNum + " " + street + " " + city + " " + state + " " + zipCode
+    function sendAddy( houseNum, street, city, state, zipCode){
+         return `${houseNum} ${street} , ${city}, ${state} ${zipCode}`;
+    }
+    function tempConversion(temperature, isFarenheit){
+         if (isFarenheit === true) {
+             return (temperature - 32) * 5 / 9;
+         } else {
+             return (temperature * 9 / 5) + 32;
+         }
+    }
+    //   function calculateLiters(gallons) {
+    //       return gallons * 3.7854;
+    //   }
+    // function calculateGallons(liters){
+    //      return liters / 3.8
+    //   }
+      function allCalc(num, givenUnit){
+          givenUnit = givenUnit.toLocaleLowerCase();
+          if (givenUnit === "liters"){
+              return num / 3.7854 + " gallons.";
+          } else if (givenUnit === "gallons"){
+              return num * 3.8 + " liters.";
+          } else if (givenUnit === "miles"){
+              return num * 1.609 + " kilometers.";
+          } else if (givenUnit === "km" || givenUnit === "kilometers"){
+              return num / 1.609 + " miles.";
+          } else {
+              return "No valid unit to convert.";
+          }
+      }
+    //   Create a function that takes a string and returns it in upper case.
+      function upperCase(string){
+         return string.toUpperCase();
+      }
+    //   Create a function that takes a string and returns it in lower case.
+      function lowerCase(string){
+          return string.toLowerCase();
+      }
+    //   Create a function that takes a string and trims any leading or trailing blank spaces.
+   function trim(str) {
+         return str.trim();
+   }
+    // Create a function that takes a string and returns the number of characters in that string.
+      function counter(str){
+          return str.length;
+      }
+    // Bonus Challenges:
+    // Create a function that takes a single character and a string and returns the index of the specified character in that string.
+    function indexer(x, str) {
+        return str.indexOf(x);
+    }
+    //== double equal(equality) vs === triple equal(strict equality)
+ let numericString = "42";
+ let theAnswer = 42;
+//when you use (==) javascript will try to convert(also known as type coercion), it sees you're trying to convert a string to a number. (===) compares both the characters and the data type, it will never consider two values that are equal to two data types.
+
+
+
+
+
+
+
+
+
+
+
+
+
+//console.log(`${ehgfjhsgjhdfg}`)
+
   </script>
 </body>
 </html>
