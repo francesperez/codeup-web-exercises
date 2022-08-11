@@ -121,18 +121,16 @@
  let theAnswer = 42;
 //when you use (==) javascript will try to convert(also known as type coercion), it sees you're trying to convert a string to a number. (===) compares both the characters and the data type, it will never consider two values that are equal to two data types.
 
-
-
-
-
-
-
-
-
-
-
-
-
+      // let someValue = "43"
+      // if (dataType(someValue) === "number"){
+      // console.log("That's a number.");
+      // } else {
+      // console.log("That;s not a number.");
+      // }
+      function isNumber(value){
+          return typeof value === "number";
+      }
+//NaN stands for not a number. It cannot be represented by actual numbers. For example, if you multiply 4 * 'string', you would get NaN.
 //console.log(`${ehgfjhsgjhdfg}`)
 
   </script>
