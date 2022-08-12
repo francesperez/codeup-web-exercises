@@ -6,6 +6,7 @@
 </head>
 <body>
   <script>
+ //Basic Function and variable declarations
       function calculateCircumference(radius) {
           const pi = 3.14159;
           return 2 * pi * radius;
@@ -19,6 +20,7 @@
       function calculateFahrenheit(celsius) {
           return (celsius * 9 / 5) + 32;
       }
+ //Funtions with conditionals
       let number = 20;
       //if (number % 2 === 0) {
       //    console.log("That number is even.");
@@ -47,9 +49,9 @@
          return Math.abs(number) % 2 === 1 || number % 3 === 0;
     }
 //adding two strings together is called congagnation
-//     let myName = "Frances";
-//     let myLastName = "Perez";
-//     let myFullName = myName + " " + myLastName
+    //     let myName = "Frances";
+    //     let myLastName = "Perez";
+    //     let myFullName = myName + " " + myLastName
 
       function fullName(firstName, middleName, lastName){
             return `${firstName} ${middleName} ${lastName}`;
@@ -68,6 +70,7 @@
     function sendAddy( houseNum, street, city, state, zipCode){
          return `${houseNum} ${street} , ${city}, ${state} ${zipCode}`;
     }
+ //Functions with Boolean parameters
     function tempConversion(temperature, isFarenheit){
          if (isFarenheit === true) {
              return (temperature - 32) * 5 / 9;
@@ -95,6 +98,7 @@
               return "No valid unit to convert.";
           }
       }
+ //String methods
     //   Create a function that takes a string and returns it in upper case.
       function upperCase(string){
          return string.toUpperCase();
@@ -116,11 +120,11 @@
     function indexer(x, str) {
         return str.indexOf(x);
     }
-    //== double equal(equality) vs === triple equal(strict equality)
- let numericString = "42";
- let theAnswer = 42;
-//when you use (==) javascript will try to convert(also known as type coercion), it sees you're trying to convert a string to a number. (===) compares both the characters and the data type, it will never consider two values that are equal to two data types.
-
+ //== double equal(equality) vs === triple equal(strict equality)
+     let numericString = "42";
+     let theAnswer = 42;
+    //when you use (==) javascript will try to convert(also known as type coercion), it sees you're trying to convert a string to a number. (===) compares both the characters and the data type, it will never consider two values that are equal to two data types.
+//Type of something
       // let someValue = "43"
       // if (dataType(someValue) === "number"){
       // console.log("That's a number.");
@@ -131,7 +135,7 @@
           return typeof value === "number";
       }
 //NaN stands for not a number. It cannot be represented by actual numbers. For example, if you multiply 4 * 'string', you would get NaN.
-//console.log(`${ehgfjhsgjhdfg}`)
+
 
   </script>
 </body>
