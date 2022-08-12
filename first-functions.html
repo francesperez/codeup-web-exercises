@@ -123,7 +123,7 @@
  //== double equal(equality) vs === triple equal(strict equality)
      let numericString = "42";
      let theAnswer = 42;
-    //when you use (==) javascript will try to convert(also known as type coercion), it sees you're trying to convert a string to a number. (===) compares both the characters and the data type, it will never consider two values that are equal to two data types.
+    //when you use (==) javascript will try to convert(also known as implicit type coercion), it sees you're trying to convert a string to a number. (===) compares both the characters and the data type, it will never consider two values that are equal to two data types.
 //Type of something
       // let someValue = "43"
       // if (dataType(someValue) === "number"){
@@ -135,6 +135,19 @@
           return typeof value === "number";
       }
 //NaN stands for not a number. It cannot be represented by actual numbers. For example, if you multiply 4 * 'string', you would get NaN.
+
+//Implicit type coercion is when the computer automatically changes the string into a mumber without you asking it to. Sometimes, one may want an explicit type coercion. For example, if you were to add "42" + 42, you would get 4242 as an answer. However, this ONLY happens with addition, NOT multiplication, division, or subtraction. To combat this problem use parseInt.
+ //42 + parseInt("42")
+
+//Write a function that takes two values.  If the values can be converted to numbers, the function should return their product.  Otherwise, the function should return false.
+    function willitwork(x,  b){
+        if (isNaN (parseFloat(x)) || isNaN (parseFloat(b))) {
+            return false;
+        } else {
+            return parseFloat(x) * parseFloat(b);
+        }}
+
+
 
 
   </script>
