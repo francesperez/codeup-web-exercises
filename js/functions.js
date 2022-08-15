@@ -10,7 +10,7 @@
  */
 
 function sayHello(name){
-    return "Hello " + name;
+    return "Hello, " + name + "!";
 }
 
 
@@ -21,7 +21,8 @@ function sayHello(name){
  *
  * console.log 'helloMessage' to check your work
  */
-const helloMessage = sayHello('Frances');
+const helloMessage = sayHello("Frances");
+console.log(helloMessage);
 
 
 // let helloMessage = "Frances"
@@ -35,7 +36,7 @@ const helloMessage = sayHello('Frances');
  * console.
  */
 let myName = "Frances"
-
+console.log(sayHello(myName));
 
 // Don't modify the following line, it generates a random number between 1 and 3
 // and stores it in a variable named random
@@ -91,7 +92,7 @@ function calculateTip(percentage, billTotal){
 
 let total = prompt("What was your bill total?");
 let percentage = prompt("What percentage do you want to tip?");
-let tipSuggestion = calculateTip(total, percentage);
+let tipSuggestion = calculateTip(total, percentage/100);
     alert("You should tip " + tipSuggestion + " dollars.")
 
 /**
@@ -104,7 +105,7 @@ let tipSuggestion = calculateTip(total, percentage);
  * Example:
  * > var originalPrice = 100;
  * > var discountPercent = .2; // 20%
- * > applyDiscount(originalPrice, discountPercent) // 80
+ * > applyDiscount(originalPrice, discountPercent) // 8034
  *
  * > applyDiscount(45.99, 0.12) // 40.4712
  */
