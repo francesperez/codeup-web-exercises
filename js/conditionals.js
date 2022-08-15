@@ -22,7 +22,7 @@
  * console.logging the function's return value
  */
 
-// function analyzeColor(colorName){
+//function analyzeColor(colorName){
 //     if (colorName === "red") {
 //         alert("Red can be related to the emotion of anger.")
 //     } else if (colorName === "orange") {
@@ -47,8 +47,8 @@
 // - `colors`: a list of the colors of the rainbow
 // - `randomColor`: contains a single random color value from the list (this
 //                  will contain a different color every time the page loads)
-var colors = ['red', 'orange', 'yellow', 'green', 'blue', 'indigo', 'violet'];
-var randomColor = colors[Math.floor(Math.random() * colors.length)];
+//var colors = ['red', 'orange', 'yellow', 'green', 'blue', 'indigo', 'violet'];
+//var randomColor = colors[Math.floor(Math.random() * colors.length)];
 /**
  * TODO:
  * Pass the `randomColor` variable to your 'analyzeColor' function and console.log the results.
@@ -61,7 +61,31 @@ var randomColor = colors[Math.floor(Math.random() * colors.length)];
  * Comment out the code above, and refactor your function to use a switch-case statement
  */
 
-function analyzeColor
+// switch (colorName) {
+//     case("red"):
+//         alert("Red can be related to the emotion of anger.");
+//         break;
+//     case("orange"):
+//         alert("Orange is sometimes used to describe warm weather.");
+//         break;
+//     case("yellow"):
+//         alert("Yellow can be used to show happiness. ");
+//         break;
+//     case("green"):
+//         alert("Green signifies new life, nature, and calmness.");
+//         break;
+//     case("blue"):
+//         alert("Blue is oftentimes used to describe sadness.");
+//         break;
+//     case("violet"):
+//         alert("Violet was used by royalty back in the day.");
+//         break;
+//     case("black"):
+//         alert("Black is a universal color and you can match most clothes with it!");
+//         break;
+//     default:
+//         alert(colorName + " ?...Hmm, I don't know much about that color.");
+// }
 
 /**
  * TODO:
@@ -69,6 +93,7 @@ function analyzeColor
  * user to your `analyzeColor` function. Alert the return value from your
  * function to show it to the user.
  */
+//let colorName = prompt("What's your favorite color?");
 
 /* ########################################################################## */
 
@@ -92,6 +117,24 @@ function analyzeColor
  * return value.
  */
 
+function calculateTotal(luckyNumber, totalAmount){
+    console.log(luckyNumber + " " + totalAmount);
+    if(luckyNumber === 0) {
+        return totalAmount
+    } else if (luckyNumber === 1){
+        return totalAmount - (totalAmount * 10/100)
+     } else if(luckyNumber === 2){
+        return totalAmount - (totalAmount * 25/100)
+    } else if(luckyNumber === 3){
+        return totalAmount - (totalAmount * 35/100)
+    } else if(luckyNumber === 4){
+        return totalAmount - (totalAmount * 50/100)
+    } else if(luckyNumber === 5){
+        return totalAmount - (totalAmount * 100/100)
+     }
+    }
+
+
 /**
  * TODO:
  * Uncomment the line below to generate a random number between 0 and 5.
@@ -100,8 +143,12 @@ function analyzeColor
  * and alerts to display to the user what their lucky number was, what their
  * price before the discount was, and what their price after the discount is.
  */
-// Generate a random number between 0 and 6
+//Generate a random number between 0 and 6
 // var luckyNumber = Math.floor(Math.random() * 6);
+//
+// let totalAmo = prompt("What was your total amount?");
+// alert("Your lucky number is: " + luckyNumber)
+// let totalDiscount = alert("Your total discount is: $" + calculateTotal(luckyNumber, totalAmo))
 
 /**
  * TODO:
@@ -121,3 +168,26 @@ function analyzeColor
  * Can you refactor your code to use functions?
  * HINT: The way we prompt for a value could be improved
  */
+
+function isNumber(value){
+    return !(isNaN(value) || typeof value === "boolean");
+}
+
+let decision = confirm("Would you like to enter a number?")
+
+if (decision) {
+        let number = parseInt(prompt("Enter a number"));
+
+        if (isNumber(number)){
+            let evenodd =  (number % 2 === 0) ?alert("That number is even.") :
+                alert("That number is odd.");
+            let plus100 = alert("Your number would be " + (number + 100) + " if you added 100 to it.");
+            let posorneg = (number > 0) ?alert("That number is positive.") :
+                alert("That number is negative.");
+        } else {alert("That's not something I can compute.")}
+
+
+    } else {
+        alert("Ok, no number facts for you then!")
+    }
+
