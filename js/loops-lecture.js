@@ -59,13 +59,13 @@
 //     }
 // }
 
-let number = Math.ceil(Math.random() * 6);
-let guess;
-console.log(guess)
-do {
-    guess = parseInt(prompt("Enter a number between 1 and 6."))
-} while (guess !== number);
-alert(`Your guess of ${guess} matches the number ${number}!`)
+// let number = Math.ceil(Math.random() * 6);
+// let guess;
+// console.log(guess)
+// do {
+//     guess = parseInt(prompt("Enter a number between 1 and 6."))
+// } while (guess !== number);
+// alert(`Your guess of ${guess} matches the number ${number}!`)
 
 
 
