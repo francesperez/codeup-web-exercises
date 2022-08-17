@@ -67,10 +67,28 @@
 // } while (guess !== number);
 // alert(`Your guess of ${guess} matches the number ${number}!`)
 
+//this is called the loop control variable
+// let count = 100 //first it is initialized to a starting value
+// while (count >= 0){ //and then the value is checked of the loop control variable in a conditional test
+//     console.log(count);
+//     count = count - 1; //change the value of the loop control variable
+// }
 
+// a shorthand for a while loop is called a FOR loop
+//the i stands for iterator, it is used to sub. for the variable name
+// for (let i = 100; i >= 0; i --){
+//     console.log(i);
+// }
 
+// let i = 0
+// while (i < 100){
+//     i++;
+//     console.log(i);
+// }
 
-
+// for ( i = 0; i < 100; i++ ) {
+//     console.log(i);
+// }
 
 
 
