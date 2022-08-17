@@ -116,25 +116,23 @@
  * Test your function by passing it various values and checking for the expected
  * return value.
  */
-
-function calculateTotal(luckyNumber, totalAmount){
-    console.log(luckyNumber + " " + totalAmount);
-    if(luckyNumber === 0) {
-        return totalAmount
-    } else if (luckyNumber === 1){
-        return totalAmount - (totalAmount * 10/100)
-     } else if(luckyNumber === 2){
-        return totalAmount - (totalAmount * 25/100)
-    } else if(luckyNumber === 3){
-        return totalAmount - (totalAmount * 35/100)
-    } else if(luckyNumber === 4){
-        return totalAmount - (totalAmount * 50/100)
-    } else if(luckyNumber === 5){
-        return totalAmount - (totalAmount * 100/100)
-     }
-    }
-
-
+//
+// function calculateTotal(luckyNumber, totalAmount){
+//     console.log(luckyNumber + " " + totalAmount);
+//     if(luckyNumber === 0) {
+//         return totalAmount;
+//     } else if (luckyNumber === 1){
+//         return totalAmount - (totalAmount * 10/100);
+//      } else if(luckyNumber === 2){
+//         return totalAmount - (totalAmount * 25/100);
+//     } else if(luckyNumber === 3){
+//         return totalAmount - (totalAmount * 35/100);
+//     } else if(luckyNumber === 4){
+//         return totalAmount - (totalAmount * 50/100);
+//     } else if(luckyNumber === 5){
+//         return totalAmount - (totalAmount * 100/100);
+//      }
+//     }
 /**
  * TODO:
  * Uncomment the line below to generate a random number between 0 and 5.
@@ -148,7 +146,7 @@ function calculateTotal(luckyNumber, totalAmount){
 //
 // let totalAmo = prompt("What was your total amount?");
 // alert("Your lucky number is: " + luckyNumber)
-// let totalDiscount = alert("Your total discount is: $" + calculateTotal(luckyNumber, totalAmo))
+// let totalDiscount = alert("Your total after adding the discount is: $" + calculateTotal(luckyNumber, totalAmo))
 
 /**
  * TODO:
@@ -169,25 +167,50 @@ function calculateTotal(luckyNumber, totalAmount){
  * HINT: The way we prompt for a value could be improved
  */
 
+// function isNumber(value){
+//     return !(isNaN(value) || typeof value === "boolean");
+// }
+//
+//
+// let decision = confirm("Would you like to enter a number?")
+//
+// if (decision) {
+//         let number = parseInt(prompt("Enter a number"));
+//         if (isNumber(number)){
+//             let evenodd =  (number % 2 === 0) ?alert("That number is even.") :
+//                 alert("That number is odd.");
+//             let plus100 = alert("Your number would be " + (number + 100) + " if you added 100 to it.");
+//             let posorneg = (number > 0) ?alert("That number is positive.") :
+//                 alert("That number is negative.");
+//         } else {alert("That's not something I can compute.")}
+//     } else {
+//         alert("Ok, no number facts for you then! I hate you anyways.")
+//     }
+
+
 function isNumber(value){
     return !(isNaN(value) || typeof value === "boolean");
 }
+function oddOrEven(number){
+    return number % 2 === 0 ? number + " is even." : number + " is odd.";
+}
+function numberPlus100(number){
+    return number + " plus 100 equals " + (number + 100);
+}
+function negOrPos(number){
+    return number < 0 ? number + " is a negative number." : number + " is a positive number.";
+}
+
 
 let decision = confirm("Would you like to enter a number?")
 
 if (decision) {
-        let number = parseInt(prompt("Enter a number"));
-
-        if (isNumber(number)){
-            let evenodd =  (number % 2 === 0) ?alert("That number is even.") :
-                alert("That number is odd.");
-            let plus100 = alert("Your number would be " + (number + 100) + " if you added 100 to it.");
-            let posorneg = (number > 0) ?alert("That number is positive.") :
-                alert("That number is negative.");
-        } else {alert("That's not something I can compute.")}
-
-
-    } else {
-        alert("Ok, no number facts for you then!")
-    }
-
+    let number = parseInt(prompt("Enter a number"));
+    if (isNumber(number)){
+        alert (oddOrEven(number));
+        alert(numberPlus100(number));
+        alert (negOrPos(number));
+    } else {alert("That's not something I can compute.")}
+} else {
+    alert("Ok, no number facts for you then! I hate you anyways.")
+}
