@@ -5,25 +5,20 @@
 //     except for the number the user entered.
 //     Your output should look like this:
 
-// let oddNum = prompt("Enter an odd number between 1 through 50: ")
-// for (var i = 1; i <= 50; i += 2 ) {
-//     if (i == oddNum) {
-//         console.log("Yikes, skipping number: " + i)
-//     } else ((i % 2) !== 0)
-//         console.log("Here is an odd number: " + i);
-//         continue;
-// }
 
-let oddNum = prompt("Enter an odd number between 1 through 50: ")
-for (var i = 1; i <= 50; i += 2 ) {
-    if (oddNum % 2 === 0){
-        alert("Please enter an odd number!!!")
-        break;
-    }else if (i == oddNum) {
-        console.log("Yikes, skipping number: " + i)
-    } else ((i % 2) !== 0)
-    console.log("Here is an odd number: " + i);
-    continue;
-}
-
-
+while(true){
+    let oddNum = prompt("Please enter an odd number between 1 through 50: ")
+    if (oddNum >= 1 && oddNum <= 50 && oddNum %2 === 1) {
+        console.log("Number to skip is: " + oddNum);
+        console.log(" ")
+        for (let i = 1; i <= 50; i += 2){
+            if (i == oddNum){
+                console.log("Yikes! Skipping number " + oddNum)
+                continue;
+            } else{
+                console.log("Here's an odd number: "+ i);
+            }
+        }
+            break;
+        }
+    }
