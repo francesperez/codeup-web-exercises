@@ -1,16 +1,16 @@
-function showMultiplicationTable (x){
-    for(i = 1; i <= 10; i++) {
-        result = i * x;
-    console.log( `${x} * ${i} = ${result}`)
-}
-}
-
-let x
-for ( i = 0; i < 10; i++) {
-    x = Math.ceil(Math.random() * 181 + 20);
-    result = x % 2 === 0 ? x + " is even." : x + " is odd."; //called terniary
-    console.log(result)
-}
+// function showMultiplicationTable (x){
+//     for(i = 1; i <= 10; i++) {
+//         result = i * x;
+//     console.log( `${x} * ${i} = ${result}`)
+// }
+// }
+//
+// let x
+// for ( i = 0; i < 10; i++) {
+//     x = Math.ceil(Math.random() * 181 + 20);
+//     result = x % 2 === 0 ? x + " is even." : x + " is odd."; //called terniary
+//     console.log(result)
+// }
 
 // set up a for loop that iterates plus one
 // .length
@@ -32,13 +32,4 @@ for ( i = 0; i < 10; i++) {
 //     console.log(i);
 // }
 
-let string = " "
-for (let i = 0; i < 8; i ++){
-    let word = prompt("Let's make a sentence. Enter a word: ")
-    if (word === "curses"){
-        console.log("that word is not allowed.");
-        continue;
-    }
-    string += " " + word
-    console.log("Your sentence is:  " + string);
-}
+

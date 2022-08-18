@@ -90,6 +90,17 @@
 //     console.log(i);
 // }
 
+// let string = " "
+// for (let i = 0; i < 8; i ++){
+//     let word = prompt("Let's make a sentence. Enter a word: ")
+//     if (word === "curses"){
+//         console.log("that word is not allowed.");
+//         continue;
+//     }
+//     string += " " + word
+//     console.log("Your sentence is:  " + string);
+// }
+
 
 
 
