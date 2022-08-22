@@ -11,17 +11,17 @@
      *  > console.log(person.firstName) // "Rick"
      *  > console.log(person.lastName) // "Sanchez"
      */
-let person = {
+    let person = {
         firstName: "Frances",
         lastName: "Perez",
         sayHello: function () {
-            return ("Hello from " + person.firstName + " " + person.lastName + "!")
+            return ("Hello from " + this.firstName + " " + this.lastName + "!")
         }
     }
 
-console.log(person.firstName)
-console.log(person.lastName)
-console.log(person.sayHello())
+    console.log(person.firstName)
+    console.log(person.lastName)
+    console.log(person.sayHello())
 
     /**
      * TODO:
@@ -54,12 +54,11 @@ console.log(person.sayHello())
         {name: 'Cameron', amount: 180},
         {name: 'Ryan', amount: 250},
         {name: 'George', amount: 320}
-];
-
+    ];
 
 
     for (let i = 0; i < shoppers.length; i++) {
-        if (shoppers[i].amount > 200){
+        if (shoppers[i].amount > 200) {
             console.log(`Hello, ${shoppers[i].name}, your subtotal of ${shoppers[i].amount} will be discounted by ${shoppers[i].amount * 0.12}, making your final total ${shoppers[i].amount * 0.88}. Thank you for shopping at HEB!`);
         } else {
             console.log(`Hello, ${shoppers[i].name}, your final total is ${shoppers[i].amount}. Thank you for shopping at HEB!`);
@@ -80,30 +79,40 @@ console.log(person.sayHello())
      */
 
     let books = [
-        {title: 'Antkind',
+        {
+            title: 'Antkind',
             author: {
                 firstName: 'Charlie',
-                 lastName: 'Kaufman'}
+                lastName: 'Kaufman'
+            }
         },
-        {title: 'Lucky',
+        {
+            title: 'Lucky',
             author: {
-                firstName:'Alice',
-                 lastName: 'Sebold'}
+                firstName: 'Alice',
+                lastName: 'Sebold'
+            }
         },
-        {title: 'Annihilation',
+        {
+            title: 'Annihilation',
             author: {
-                firstName:'Jeff',
-                 lastName: 'Vandermeer'}
+                firstName: 'Jeff',
+                lastName: 'Vandermeer'
+            }
         },
-        {title: 'A Song of Fire and Ice',
+        {
+            title: 'A Song of Fire and Ice',
             author: {
                 firstName: 'George RR',
-                 lastName: 'Martin'}
+                lastName: 'Martin'
+            }
         },
-        {title: 'My Brilliant Friend',
+        {
+            title: 'My Brilliant Friend',
             author: {
-                firstName:'Elena',
-                 lastName: 'Ferrante'}
+                firstName: 'Elena',
+                lastName: 'Ferrante'
+            }
         }
     ]
     console.log(books[0].author.firstName)
@@ -136,9 +145,8 @@ console.log(person.sayHello())
      */
 
     for (let i = 0; i < books.length; i++) {
-        console.log((`Book #${i + 1} \nTitle: ${books[i].title}  \nAuthor: ${books[i].author.firstName} ${books[i].author.lastName}`))
+        console.log((`Book #${i + 1} \nTitle: ${books[i].title}  \nAuthor: ${books[i].author.firstName} ${books[i].author.lastName} \n  ---`))
     }
-
 
 
     /**
@@ -151,5 +159,23 @@ console.log(person.sayHello())
      *   outputs the information described above. Refactor your loop to use your
      *   `showBookInfo` function.
      */
+    function createBook(title, firstName, lastName) {
+       return {
+            title: title,
+            author: {
+                firstName: firstName,
+                lastName: lastName
+            }
+        }
+    }
+books.push(createBook("The Great Gatsby", "F. Scott", "Fitzgerald"));
+
+    // function showBookInfo(bookObject) {
+    //     console.log(`Title: ${bookObject.title} \nAuthor: ${bookObject.author.firstName} ${bookObject.author.lastName}`);
+    // }
+    //
+    // for (let i = 0; i < books.length; i++) {
+    //     console.log(showBookInfo(books[i]));
+    // }
 
 })();

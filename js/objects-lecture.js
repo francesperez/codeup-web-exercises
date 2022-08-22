@@ -184,3 +184,37 @@ let model = {
 }
 controller.attack(model.fighter, model.monster);
 controller.attack(model.monster, model.fighter);
+
+//creating 'empty' objects, then assigning properties after the fact (also called dynamically)
+let goblin = {};
+goblin.name = "Goblin";
+
+//create a function that returns objects
+
+function makeMonster(name, hitPoints, maxDamage){
+    return {
+        name: name,
+        hitPoints: hitPoints,
+        maxDamage: maxDamage
+    };
+}
+
+model.hobgoblin = makeMonster("Hobgoblin", 11, 11);
+controller.attack(model.hobgoblin,model.fighter);
+
+//use object constructor
+//the function name is traditionally starts with a capital; that way you KNOW it is a constructor
+//also, you dont use commas in here, you would use a semi-colon
+function Monster(name, hitPoints, maxDamage){
+    this.name = name;
+    this.hitPoints = hitPoints;
+    this.maxDamage = maxDamage;
+}
+
+//an object constructor has a very particular way of being called
+model.hobgoblinCaptain = new Monster("Hobgoblin Captain", 39, 14);
+controller.attack(model.hobgoblinCaptain, model.fighter);
+
+for (let property in model){
+    console.log(model[property].name);
+}
