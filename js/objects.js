@@ -80,11 +80,31 @@ console.log(person.sayHello())
      */
 
     let books = [
-        {title: 'Antkind', author: {firstName: 'Charlie', lastName: 'Kaufman'}},
-        {title: 'Lucky', author: {firstName:'Alice', lastName: 'Sebold'}},
-        {title: 'Annihilation', author: {firstName:'Jeff', lastName: 'Vandermeer'}},
-        {title: 'Game of Thrones', author: {firstName: 'George RR', lastName: 'Martin'}},
-        {title: 'My Brilliant Friend', author: {firstName:'Elena', lastName: 'Ferrante'}}
+        {title: 'Antkind',
+            author: {
+                firstName: 'Charlie',
+                 lastName: 'Kaufman'}
+        },
+        {title: 'Lucky',
+            author: {
+                firstName:'Alice',
+                 lastName: 'Sebold'}
+        },
+        {title: 'Annihilation',
+            author: {
+                firstName:'Jeff',
+                 lastName: 'Vandermeer'}
+        },
+        {title: 'A Song of Fire and Ice',
+            author: {
+                firstName: 'George RR',
+                 lastName: 'Martin'}
+        },
+        {title: 'My Brilliant Friend',
+            author: {
+                firstName:'Elena',
+                 lastName: 'Ferrante'}
+        }
     ]
     console.log(books[0].author.firstName)
     console.log(books[2].author.lastName)
@@ -114,8 +134,9 @@ console.log(person.sayHello())
      *      ---
      *      ...
      */
+
     for (let i = 0; i < books.length; i++) {
-        console.log((`Title: ${books[i].title}  \nAuthor: ${books[i].author.firstName} ${books[i].author.lastName}`))
+        console.log((`Book #${i + 1} \nTitle: ${books[i].title}  \nAuthor: ${books[i].author.firstName} ${books[i].author.lastName}`))
     }
 
 
