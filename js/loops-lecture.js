@@ -102,6 +102,11 @@
 // }
 
 
+let fruits = ["oranges", "apples", "strawberry", "kiwi", "pineapple"];
+//for each is a 'for loop' for other things
+fruits.forEach(function(element, index, array ){
+    console.log(array)
+})
 
 
 

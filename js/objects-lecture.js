@@ -149,72 +149,101 @@
 //Let's create a controller object to handle anything players or game objects do that affects the state of the game.
 // The controller might handle taking user input and calculating the input's effect on the game.
 
-//this object effectivley gets rid of the functions in the previous two objects, thus reducing redundancy
-let controller = {
-    attack: function(attacker, defender){
-        let defenderhp = defender.hitPoints;
-        let damage = Math.ceil(Math.random() * attacker.maxDamage);
-        defender.hitPoints -= damage;
-        view.displayAttackResults(attacker, defender, defenderhp, damage);
-    }
+// //this object effectivley gets rid of the functions in the previous two objects, thus reducing redundancy
+// let controller = {
+//     attack: function(attacker, defender){
+//         let defenderhp = defender.hitPoints;
+//         let damage = Math.ceil(Math.random() * attacker.maxDamage);
+//         defender.hitPoints -= damage;
+//         view.displayAttackResults(attacker, defender, defenderhp, damage);
+//     }
+// }
+//
+// //the view objcts handles the output, rather than littering the console.log messages throughout the controller objects
+// let view = {
+//     displayAttackResults: function (attacker, defender, defenderhp, damage){
+//         console.log(`${defender.name} has ${defenderhp} hit points`);
+//         console.log(attacker.name + " attacks!");
+//         console.log(`${attacker.name} does ${damage} hit points of damage!`);
+//         console.log(`${defender.name} now has ${defenderhp - damage} hit points`);
+//         console.log("-----------------");
+//     }
+// }
+//
+// let model = {
+//     fighter: {
+//         name: "Arata",
+//         hitPoints: 18,
+//         maxDamage: 8,
+//     },
+//     monster: {
+//         name: "Draggonolord",
+//         hitPoints: 183,
+//         maxDamage: 2,
+//     }
+// }
+// controller.attack(model.fighter, model.monster);
+// controller.attack(model.monster, model.fighter);
+//
+// //creating 'empty' objects, then assigning properties after the fact (also called dynamically)
+// let goblin = {};
+// goblin.name = "Goblin";
+//
+// //create a function that returns objects
+//
+// function makeMonster(name, hitPoints, maxDamage){
+//     return {
+//         name: name,
+//         hitPoints: hitPoints,
+//         maxDamage: maxDamage
+//     };
+// }
+//
+// model.hobgoblin = makeMonster("Hobgoblin", 11, 11);
+// controller.attack(model.hobgoblin,model.fighter);
+//
+// //use object constructor
+// //the function name is traditionally starts with a capital; that way you KNOW it is a constructor
+// //also, you dont use commas in here, you would use a semi-colon
+// function Monster(name, hitPoints, maxDamage){
+//     this.name = name;
+//     this.hitPoints = hitPoints;
+//     this.maxDamage = maxDamage;
+// }
+//
+// //an object constructor has a very particular way of being called
+// model.hobgoblinCaptain = new Monster("Hobgoblin Captain", 39, 14);
+// controller.attack(model.hobgoblinCaptain, model.fighter);
+//
+// for (let property in model){
+//     console.log(model[property].name);
+// }
+
+//object destructuring
+const car = {
+    make: "Toyota",
+    model: "Tacoma",
+    year: 2019,
+    mileage: 12657
 }
+// let make = car.make;
+// let carmodel = car.model;
+//
+// console.log(make);
+// console.log(carmodel);
 
-//the view objcts handles the output, rather than littering the console.log messages throughout the controller objects
-let view = {
-    displayAttackResults: function (attacker, defender, defenderhp, damage){
-        console.log(`${defender.name} has ${defenderhp} hit points`);
-        console.log(attacker.name + " attacks!");
-        console.log(`${attacker.name} does ${damage} hit points of damage!`);
-        console.log(`${defender.name} now has ${defenderhp - damage} hit points`);
-        console.log("-----------------");
-    }
-}
+const {make, model, year, mileage} = car;
+console.log(make);
+console.log(model);
+console.log(year);
+console.log(mileage);
 
-let model = {
-    fighter: {
-        name: "Arata",
-        hitPoints: 18,
-        maxDamage: 8,
-    },
-    monster: {
-        name: "Draggonolord",
-        hitPoints: 183,
-        maxDamage: 2,
-    }
-}
-controller.attack(model.fighter, model.monster);
-controller.attack(model.monster, model.fighter);
 
-//creating 'empty' objects, then assigning properties after the fact (also called dynamically)
-let goblin = {};
-goblin.name = "Goblin";
 
-//create a function that returns objects
 
-function makeMonster(name, hitPoints, maxDamage){
-    return {
-        name: name,
-        hitPoints: hitPoints,
-        maxDamage: maxDamage
-    };
-}
 
-model.hobgoblin = makeMonster("Hobgoblin", 11, 11);
-controller.attack(model.hobgoblin,model.fighter);
 
-//use object constructor
-//the function name is traditionally starts with a capital; that way you KNOW it is a constructor
-//also, you dont use commas in here, you would use a semi-colon
-function Monster(name, hitPoints, maxDamage){
-    this.name = name;
-    this.hitPoints = hitPoints;
-    this.maxDamage = maxDamage;
-}
 
-//an object constructor has a very particular way of being called
-model.hobgoblinCaptain = new Monster("Hobgoblin Captain", 39, 14);
-controller.attack(model.hobgoblinCaptain, model.fighter);
 
-for (let property in model){
-    console.log(model[property].name);
-}
+
+

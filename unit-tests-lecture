@@ -1,0 +1,5 @@
+How do you find out what's wrong when you have 80 million lines of code?
+Would you just comment it out? Would you search through every single line to find the mistake?
+The answer is to write tests for every single unit to make sure everything works fine.
+By the book, you write the tests first, that way when you run the tests, you can keep track of your progress when the
+tests pass.

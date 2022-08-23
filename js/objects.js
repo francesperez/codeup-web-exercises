@@ -1,4 +1,4 @@
-(function() {
+
     "use strict";
 
     /**
@@ -144,9 +144,7 @@
      *      ...
      */
 
-    for (let i = 0; i < books.length; i++) {
-        console.log((`Book #${i + 1} \nTitle: ${books[i].title}  \nAuthor: ${books[i].author.firstName} ${books[i].author.lastName} \n  ---`))
-    }
+
 
 
     /**
@@ -159,23 +157,23 @@
      *   outputs the information described above. Refactor your loop to use your
      *   `showBookInfo` function.
      */
-    function createBook(title, firstName, lastName) {
-       return {
+    function createBook (title, authorFirstName, authorLastName) {
+        books.push({
             title: title,
-            author: {
-                firstName: firstName,
-                lastName: lastName
+            author: {firstName: authorFirstName,
+                lastName: authorLastName
             }
+        })
+
+
+        for (let i = 0; i < books.length; i++) {
+            console.log((`Book #${i + 1} \nTitle: ${books[i].title}  \nAuthor: ${books[i].author.firstName} ${books[i].author.lastName} \n  ---`))
         }
-    }
-books.push(createBook("The Great Gatsby", "F. Scott", "Fitzgerald"));
+        console.log(books)
+    };
 
-    // function showBookInfo(bookObject) {
-    //     console.log(`Title: ${bookObject.title} \nAuthor: ${bookObject.author.firstName} ${bookObject.author.lastName}`);
-    // }
-    //
-    // for (let i = 0; i < books.length; i++) {
-    //     console.log(showBookInfo(books[i]));
-    // }
-
-})();
+        // function showBookInfo(bookObject, index) {
+        //     if (index !== undefined) {
+        //         console.log(`Book # ${index+1}\n Title: ${bookObject[index].title}\n Author: ${bookObject[index].author.firstName} ${bookObject[index].author.lastName} \n ---`);
+        //     }
+        // }
