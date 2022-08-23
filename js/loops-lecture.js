@@ -1,3 +1,23 @@
+//for (let i = 0 (initialization; i< 5 condition; i++ increment)
+    //console.log('loop')
+//i generally stands for index; it could be started at any number I like
+//the initialization can be started at any number we like
+//the condition will keep going until it's false
+//the increment is how much the counter will be going
+
+//another thing we can do it 'break early'
+//for example, we can put
+//if (i === 3) break;
+//with this condition, the loop will stop once it reaches the number 3
+
+
+
+
+
+
+
+
+
 // let slices = 4;
 // console.log(`There are ${slices} slices.`)
 // while (slices > 0){
@@ -102,11 +122,18 @@
 // }
 
 
-let fruits = ["oranges", "apples", "strawberry", "kiwi", "pineapple"];
-//for each is a 'for loop' for other things
-fruits.forEach(function(element, index, array ){
-    console.log(array)
-})
+// let fruits = ["oranges", "apples", "strawberry", "kiwi", "pineapple"];
+// //for each is a 'for loop' for other things
+// fruits.forEach(function(element, index, array ){
+//     console.log(array)
+// })
+
+
+//when it comes to loopig thorugh arrays, for each functions are usually used
+// const animals = ['cat', 'dog', 'bat', 'cow'];
+// animals.forEach(animal => {
+//     console.log(animal);
+// })
 
 
 
