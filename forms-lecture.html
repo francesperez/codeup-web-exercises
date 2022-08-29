@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Forms Lecture</title>
+    <style>
+        body {
+            background-color: #087062;
+            background-image: linear-gradient(#020f60, #571da1, #ff9168);
+            color: white;
+            font-size: 30px;
+        }
+        textarea {
+            resize: none;
+        }
+        legend{
+            color: #be0020;
+            font-size: 40px;
+        }
+        fieldset{
+            color: #ffacac;
+        }
+    </style>
+</head>
+<body>
+<!--Forms are the bread and butter of the webpage world. Forms are the essential points of contact. You need forms
+to drive engagement; they have to be well-designed, readable, easy to fill out, and provide a user. -->
+<!--Username-->
+    <form method="POST" action="https://request-inspector.glitch.me"> <!--these methods are the package the data will be
+    transimitted over a network.
+     GET is getting information from somewhere, POST is often aimed at providing information to a website which will
+     be absorbed into the database or trigger an interaction with the database.-->
+<!--       <input type="text"> &lt;!&ndash; This is called a 'void element', it has no closing tag &ndash;&gt;-->
+       <fieldset>
+           <legend>User Information</legend>
+            <label for ="Username">Username:</label>
+            <input type="text" name="username" id="username"><br>
+            <br>
+     <!--Password-->
+            <label for="password">Password:</label>
+            <input type="password" name="password" id="password"><br>
+            <input type="submit">
+    <hr>
+    <!--Address-->
+            <label for="streetAddress">Street Address:</label>
+            <input type="text" name="streetAddress" id="streetAddress"><br>
+            <br>
+            <label for="city">City</label>
+            <input type="text" name="city" id="city"><br>
+            <br>
+       </fieldset>
+        <input type="submit" value="Submit">
+<hr>
+
+<!--Marvel or DC? -->
+        <h3>Marvel or DC?</h3>
+        <label for="marvel">Marvel</label>
+        <input type="radio" name="MarvelOrDC" value="Marvel" id="marvel"><br>
+        <label for="dc">DC</label>
+        <input type="radio" name="MarvelOrDC" value="DC" id="dc"><br>
+        <br>
+        <input type="submit" value="Submit">
+<hr>
+<!-- Extras-->
+        <h4>Choose your extras:</h4>
+        <input type="checkbox" name="extras" value="Provolone" id="provolone"><label for="provolone">Provolone</label><br>
+        <input type="checkbox" name="extras" value="Cheddar" id="cheddar"><label for="cheddar">Cheddar</label><br>
+        <input type="checkbox" name="extras" value="American Cheese" id="american"><label for="american">American Cheese</label><br>
+        <input type="checkbox" name="extras" value="Swiss" id="swiss"><label for="swiss">Swiss Cheese</label><br>
+        <input type="checkbox" name="extras" value="Pepper Jack" id="pepperJack"><label for="pepperJack">Pepper Jack</label><br>
+        <input type="checkbox" name="extras" value="Jalapenos" id="jalapenos"><label for="jalapenos">Sliced Jalapenos</label><br>
+        <input type="checkbox" name="extras" value="Mushrooms" id="mushrooms"><label for="mushrooms">Sauteed Mushrooms</label><br>
+        <input type="checkbox" name="extras" value="Onions" id="onions"><label for="onions">Grilled Onions</label><br>
+        <input type="checkbox" name="extras" value="Bacon" id="bacon"><label for="bacon">Extra Bacon</label><br>
+        <input type="checkbox" name="extras" value="Guacamole" id="guacamole"><label for="guacamole">Guacamole</label><br>
+        <br>
+        <input type="submit" value="Submit">
+    <hr>
+<!--Drop-down menu-->
+        <h4><label for="destination">Choose your destination:</label></h4>
+        <select name="destination" id="destination">
+            <option value="Hawaii">Hawaii</option>
+            <option value="Yucatan">Yucatan</option>
+            <option value="Greece">Greece</option>
+            <option value="Laredo">Laredo</option>
+            <option value="New Braunfels">New Braunfels</option>
+            <option value="Denver">Denver</option>
+            <option value="Seattle">Seattle</option>
+            <option value="Miami">Miami</option>
+        </select>
+        <br>
+        <h4><label for="comments">Please Leave Your Comments:</label></h4>
+       <textarea name="comments" id="comments" cols="30" rows="10"></textarea><br>
+        <br>
+<!-- Grab Bag-->
+        <input type="date" name="date" id="date">
+        <input type="color" name="color">
+        <input type="hidden" name="studentID" value="A00116979">
+<!--Reset and Submit-->
+        <input type="submit" value="Submit"><br>
+        <br>
+        <input type="reset"><br>
+    </form>
+<br>
+</body>
+</html>
