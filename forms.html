@@ -3,8 +3,61 @@
 <head>
     <meta charset="UTF-8">
     <title>Forms</title>
+    <style>
+        body {
+            background-color: #087062;
+            background-image: linear-gradient(#020f60, #571da1, #a62e01);
+            color: white;
+            font-size: 30px;
+        }
+        textarea {
+            resize: none;
+        }
+        legend{
+            color: #ffe0e0;
+            font-size: 40px;
+        }
+        fieldset{
+            color: #ffacac;
+        }
+    </style>
 </head>
 <body>
-
+        <form method="POST" action="https://request-inspector.glitch.me/">
+            <fieldset>
+                <legend><h1>Register With Us</h1></legend>
+                <label for ="Email">Email:</label>
+                <input type="email" name="email" id="email"><br>
+                <br>
+                <label for="password">Password:</label>
+                <input type="password" name="password" id="password"><br>
+                <br>
+                <h4><label for="comments">Bio:</label></h4>
+                <textarea placeholder="Describe yourself here..." name="comments" id="comments" cols="50"
+                rows="10"></textarea><br>
+                <br>
+                <h4>How Did You Hear About Us?</h4>
+                <label for="billboard">Billboard</label>
+                <input type="checkbox" name="aboutUs" value="Billboard" id="billboard"><br>
+                <label for="radioadv">Radio Advertisement</label>
+                <input type="checkbox" name="aboutUs" value="RadioAdv" id="radioadv"><br>
+                <label for="interadv">Internet Advertisement</label>
+                <input type="checkbox" name="aboutUs" value="IntAdv" id="interadv"><br>
+                <label for="other">Other</label>
+                <input type="checkbox" name="aboutUs" value="Other" id="other"><br>
+                <br>
+                <h4><label for="browser">What browser are you using?</label></h4>
+                <select name="browser" id="browser">
+                    <option value="Chrome">Google Chrome</option>
+                    <option value="Firefox">Firefox</option>
+                    <option value="Safari">Safari</option>
+                    <option value="DuckDuckGo">DuckDuckGo</option>
+                    <option value="Explorer">Explorer</option>
+                </select><br>
+                <br>
+            </fieldset>
+            <br>
+            <input type="submit"><br>
+        </form>
 </body>
 </html>
