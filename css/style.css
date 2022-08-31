@@ -1,5 +1,20 @@
+
+
 .fancy-header {
-    color: purple;
+    color: #1987c2;
+    text-decoration: underline;
+    text-align: center;
+}
+
+h2 {
+    color: #04b798;
     text-decoration: underline;
 }
 
+body {
+    background-color: #a891ec;
+    background-image: url(https://img.freepik.com/premium-photo/programming-code-abstract-technology-background-software-developer-computer-script_34663-31.jpg?w=2000);
+    background-repeat: no-repeat;
+    background-position: top center, 30px;
+    background-size: 1000px 500px;
+}
