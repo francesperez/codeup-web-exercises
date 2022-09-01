@@ -11,12 +11,11 @@ body, html {
 }
 
 form {
+    margin: 1em;
     padding: 1em;
 }
 
 fieldset {
-    -webkit-box-shadow: 10px 10px 5px 0 rgba(0,0,0,0.75);
-    -moz-box-shadow: 10px 10px 5px 0 rgba(0,0,0,0.75);
     box-shadow: 10px 10px 5px 0 rgba(0,0,0,0.75);
     padding: 1em;
     border: none;
@@ -30,8 +29,7 @@ fieldset {
 
 .form-group {
     width: 100%;
-    margin-top: .5em;
-    margin-bottom: .5em;
+    margin: .5em 0;
 }
 
 .form-label {
@@ -53,9 +51,9 @@ fieldset {
 .form-control {
     border: 1.5px solid #888686;
     border-radius: 4px;
-    margin: 4px;
-    padding: .5em;
-    width: calc(100% - 25px);
+    padding: 4px;
+    margin: .5em 0;
+    width: calc(100% - 10px);
 }
 
 
