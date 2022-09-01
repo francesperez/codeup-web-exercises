@@ -1,0 +1,28 @@
+/*BOX MODEL LECTURE*/
+body{
+    margin: 26px;
+}
+
+#main {
+    box-sizing: border-box;
+    width: 500px;
+    border: 10px solid #193a35;
+    border-radius: 20px; /*curves the corners of the box*/
+    padding: 50px;
+    background-color: #ffd0da;
+    background-image: linear-gradient(to bottom left, #00ffdc, #132a26);
+    margin-left: 50px;
+    margin-top:50px;
+    box-shadow: -20px 20px 25px #143d38;
+                /*-20px -20px 25px #087062; !*this will add a second shadow to the box*!*/
+}
+
+p {
+    background-color: #e8f5f1;
+    box-sizing: border-box;
+    width: 350px;
+    border: 10px solid #2b8d80;
+    border-radius: 7px;
+    padding: 10px;
+    margin: 75px 1px 10px 0;
+}
