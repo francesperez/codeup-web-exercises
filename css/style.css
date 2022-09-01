@@ -1,7 +1,7 @@
 
 
 .fancy-header {
-    color: #1987c2;
+    color: #0c5901;
     text-decoration: underline;
     text-align: center;
     font-size: 40px;
@@ -22,14 +22,21 @@ body {
 }
 
 ol {
-    list-style: hebrew		;
+    list-style: radial-gradient(circle, #c0ffa9 0, #5a8d53, #1a330a 100%)		;
 }
 
-ul {
+ul li {
     list-style: hiragana-iroha		;
 }
 
+table {
+    margin: auto;
+    border: 10px solid #495b58;
+    border-collapse: collapse;
+}
+
 th, td {
+    border: 5px solid #495b58;
     padding: 30px;
     text-align: left;
     font-size: 20px;
