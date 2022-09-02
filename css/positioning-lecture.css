@@ -1,0 +1,45 @@
+/*if referencing the div id from html document, use the # symbol*/
+/*if you are referencing a div class, you would use a . symbol*/
+#ipsum{
+    /*width: 25%;*/
+    /*float: left;*/
+    /*border: 1px solid black;*/
+    /*padding: 10px;*/
+    /*margin: 1rem;*/
+}
+
+#quenya {
+    position: relative;
+}
+
+#pirate {
+    /*width: 25%;*/
+    /*float: left;*/
+    /*border: 1px solid black;*/
+    /*padding: 10px;*/
+    /*margin: 1rem;*/
+}
+
+img {
+    position: fixed;
+    top: 0;
+    right: 10px;
+    z-index: -1;
+}
+
+img[src*="fish"] {
+    position: absolute;
+    top: 0;
+    right: 10px;
+    left: unset;
+}
+
+footer {
+    width: 20%;
+    margin: auto;
+}
+footer p {
+    text-align: center;
+    position: relative;
+    left: 5px;
+}
