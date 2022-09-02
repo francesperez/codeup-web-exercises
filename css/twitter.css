@@ -2,8 +2,8 @@
     --main-bg: #E6ECF0;
     --link-color: #3B94D9;
     --main-link-color: #848487;
-    --light-bg: #ffffff;
-    --separator-color: #afaeae;
+    --light-bg: #FFF;
+    --separator-color: #DDD;
 }
 * {
     box-sizing: border-box;
@@ -29,7 +29,7 @@ a {
     background: var(--light-bg);
     position: fixed;
     width: 100%;
-    z-index: 1000;
+    z-index: 1;
 }
 .nav-item{
     display: inline-block;
