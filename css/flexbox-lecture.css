@@ -1,0 +1,49 @@
+.flexbox {
+    border: 1px solid black;
+    padding: 5px;
+    display: flex; /*instead of being stacked on top of each other and stretching to the full width of the container, they line up in a row. The following website is a great cheat-sheet for the different types of flexes: https://flexbox.malven.co/*/
+    /*height: 900px;*/
+    /*flex-direction: column; !*changes the direction of the 'main axis'; in this case the main axis is bottom to top*!*/
+    /*flex-wrap: wrap;*/
+    flex-flow: row wrap;
+    /*justify-content: flex-start; !*justify content defines the distribution of space along the main axis of the container. In this case, the main axis is left to right*!*/
+    align-items: baseline; /*will only stretch as much as it needs to, to justify the content*/
+    /*align-content: space-around; !* align-content is used to control how extra cross-axis space is distributed between and around flex lines. It applies only to containers with multiple flex lines.*/
+}
+
+.flex-item {
+    border: 1px solid black;
+    margin: 5px;
+    padding: 5px;
+}
+
+.one {
+    align-self: flex-end;
+    order: 1;
+}
+.two {
+    align-self: center;
+}
+
+/*.upsize {*/
+/*    font-size: 150%;*/
+/*}*/
+
+/*.topMargin {*/
+/*    margin-top: 50px;*/
+/*}*/
+
+/*.three {*/
+/*    flex-grow: 2;*/
+/*}*/
+
+.four {
+    /*flex-grow: 1;*/
+    align-self: center;
+}
+
+.six {
+     /*flex-grow: .5;*/
+    align-self: flex-end;
+    order: -1;
+ }
