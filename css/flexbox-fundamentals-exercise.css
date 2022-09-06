@@ -63,7 +63,7 @@ section:nth-of-type(1) div:last-child {
 }
 
 .purple-box:nth-of-type(1) {
-    flex-grow: 3;
+    flex-grow: 2;
 }
 
 .purple-box:nth-of-type(2) {
@@ -77,13 +77,11 @@ section:nth-of-type(1) div:last-child {
 }
 
 section:nth-of-type(3) {
-    justify-content: flex-end;
-
+align-items: center;
 }
 
 section:nth-of-type(3) h3 {
     flex-grow: 1;
-    flex-direction: column;
 }
 
 .orange-circle {
@@ -122,8 +120,9 @@ section:nth-of-type(6) {
     height: 14em;
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-between;
     align-items: center;
+    justify-content: space-between;
+
 }
 
 .grey-box {
@@ -134,4 +133,5 @@ section:nth-of-type(6) {
 
 .grey-box:nth-of-type(odd) {
     height: 4em;
+    padding: 20px;
 }

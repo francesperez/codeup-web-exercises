@@ -1,0 +1,25 @@
+.flexbox {
+    border: 1px solid black;
+    box-sizing: border-box;
+    display: flex;
+    flex-flow: row;
+    /*align-items: center;*/
+    /*justify-content: center;*/
+}
+
+.flex-item {
+    margin: 5px;
+    padding: 5px;
+}
+
+.articles, .products, .market, .jobs {
+
+}
+
+.logo {
+    justify-content: center;
+}
+
+.follow-us {
+    align-content: flex-end;
+}
