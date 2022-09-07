@@ -1,31 +1,20 @@
-nav, div {
-    display: flex;
-    background: #c9c8c8;
-}
 body {
     margin: auto;
-
+}
+nav, div {
+    display: flex;
+    background: #b0afaf;
 }
 
 nav {
     display: flex;
     align-items: center;
     font-family: 'Work Sans', serif;
-    font-weight: bold;
+    font-weight: bolder;
     font-size: .7em;
 }
 
-nav :nth-of-type(1){
-
-    justify-content: flex-start;
-}
-nav :nth-of-type(2){
-    justify-content: flex-start;
-}
-nav :nth-of-type(3){
-    justify-content: flex-start;
-}
-nav :nth-of-type(4){
+nav :nth-of-type(1), nav :nth-of-type(2), nav :nth-of-type(3), nav :nth-of-type(4) {
     justify-content: flex-start;
 }
 
@@ -36,12 +25,6 @@ nav :nth-of-type(5){
     padding: 0 .2em;
     font-family: 'Montserrat', serif;
     font-weight: bolder;
-}
-
-nav :nth-of-type(6){
-    margin: 1px;
-    justify-content: flex-end;
-    align-items: center;
 }
 
 a {
@@ -67,7 +50,14 @@ img {
     align-items: center;
     width: 20px;
     height: 20px;
+    padding: 3px;
 }
+
+
+
+
+
+
 
 
 
