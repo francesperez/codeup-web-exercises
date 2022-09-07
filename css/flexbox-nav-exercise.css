@@ -1,5 +1,5 @@
 body {
-    margin: auto;
+    margin: 1px;
 }
 nav, div {
     display: flex;
@@ -14,13 +14,9 @@ nav {
     font-size: .7em;
 }
 
-nav :nth-of-type(1), nav :nth-of-type(2), nav :nth-of-type(3), nav :nth-of-type(4) {
-    justify-content: flex-start;
-}
 
 nav :nth-of-type(5){
     margin: auto;
-    justify-content: center;
     font-size: 3em;
     padding: 0 .2em;
     font-family: 'Montserrat', serif;
@@ -34,24 +30,21 @@ a {
     color: black;
 }
 
+img {
+    width: 20px;
+    height: 20px;
+}
+
 a:link {
     text-decoration: none;
 }
 
 a:hover {
     text-decoration: none;
-    color: blue;
+    color: #0050ff;
 }
 
-img {
 
-    margin: 1px;
-    justify-content: flex-end;
-    align-items: center;
-    width: 20px;
-    height: 20px;
-    padding: 3px;
-}
 
 
 
