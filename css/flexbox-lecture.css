@@ -1,7 +1,7 @@
 /*.flexbox {*/
 /*    border: 1px solid black;*/
 /*    padding: 5px;*/
-/*    display: flex; !*instead of being stacked on top of each other and stretching to the full width of the container, they line up in a row. The following website is a great cheat-sheet for the different types of flexes: https://flexbox.malven.co!*/*/
+/*    display: flex; !*instead of being stacked on top of each other and stretching to the full width of the container, they line up in a row. The following website is a great cheat-sheet for the different types of flexes: https://flexbox.malven.co!*/
 /*    !*height: 900px;*!*/
 /*    !*flex-direction: column; !*changes the direction of the 'main axis'; in this case the main axis is bottom to top*!*!*/
 /*    !*flex-wrap: wrap;*!*/
@@ -48,4 +48,57 @@
 /*    order: -1;*/
 /* }*/
 
+body {
+    background-color: white;
+    font-family: "Helvetica Neue", Helvetica, sans-serif;
+}
 
+header,article,footer, aside {
+    padding: 0.5rem;
+    box-sizing: border-box;
+    background-color: #dedede;
+}
+
+header {
+    background-color: #333;
+    color: #ccc;
+    text-align: center;
+}
+
+main {
+    display: flex;
+}
+
+article {
+    flex: 75%;
+}
+
+aside {
+    background-color: white;
+}
+
+nav {
+    display: flex;
+    background-color: black;
+    padding: 10px 0;
+}
+
+nav a {
+    flex: auto;
+    background: #ccc;
+    color: black;
+    text-align: center;
+    margin: 0 5px;
+    padding: 5px 0;
+    text-decoration: none;
+}
+
+nav a:hover {
+    outline: 1px solid red;
+    color: red;
+    text-decoration: underline;
+}
+
+nav a:nth-of-type(1), nav a:nth-of-type(2), nav a:last-of-type{
+
+}
