@@ -1,25 +1,75 @@
-.flexbox {
-    border: 1px solid black;
-    box-sizing: border-box;
+nav, div {
     display: flex;
-    flex-flow: row;
-    /*align-items: center;*/
-    /*justify-content: center;*/
+    background: #c9c8c8;
 }
-
-.flex-item {
-    margin: 5px;
-    padding: 5px;
-}
-
-.articles, .products, .market, .jobs {
+body {
+    margin: auto;
 
 }
 
-.logo {
+nav {
+    display: flex;
+    align-items: center;
+    font-family: 'Work Sans', serif;
+    font-weight: bold;
+    font-size: .7em;
+}
+
+nav :nth-of-type(1){
+
+    justify-content: flex-start;
+}
+nav :nth-of-type(2){
+    justify-content: flex-start;
+}
+nav :nth-of-type(3){
+    justify-content: flex-start;
+}
+nav :nth-of-type(4){
+    justify-content: flex-start;
+}
+
+nav :nth-of-type(5){
+    margin: auto;
     justify-content: center;
+    font-size: 3em;
+    padding: 0 .2em;
+    font-family: 'Montserrat', serif;
+    font-weight: bolder;
 }
 
-.follow-us {
-    align-content: flex-end;
+nav :nth-of-type(6){
+    margin: 1px;
+    justify-content: flex-end;
+    align-items: center;
 }
+
+a {
+    display: inline-block;
+    border-radius: 5px;
+    padding: 5px;
+    color: black;
+}
+
+a:link {
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: none;
+    color: blue;
+}
+
+img {
+
+    margin: 1px;
+    justify-content: flex-end;
+    align-items: center;
+    width: 20px;
+    height: 20px;
+}
+
+
+
+
+
