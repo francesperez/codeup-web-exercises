@@ -25,6 +25,15 @@
     culpa qui officia deserunt mollit anim id est laborum.
 </p>
 
+<button id="btn1">Click me to change the header!</button><br>
+<br>
+<button id="btn2">Click me to change the second header to blue!</button><br>
+<br>
+<button id="btn3">Click me to change the colors of the list items!</button><br>
+<br>
+<button id="btn4">Click me to change the last paragraph!</button>
+
+
 <script>
     (function() {
         "use strict";
@@ -32,29 +41,83 @@
         var mainHeader = document.getElementById("main-header");
 
         // TODO: Set inner html of mainHeader to "JavaScript is Cool"
-        mainHeader.innerText = `Javascript is Cool`
+        //mainHeader.innerText = `Javascript is Cool`
 
         // TODO: Uncomment the next line and get the sub header element by id
         var subHeader = document.getElementById("sub-header");
 
         // TODO: Set the text color of subHeader to blue
-        subHeader.style.color = 'blue';
+        //subHeader.style.color = 'blue';
 
         // TODO: Uncomment the next line and get all list items
         var listItems = document.getElementsByTagName('li');
 
         // TODO: Set text color on every other list item to grey
-        for (let i = 0; i < listItems.length; i += 2) {
-            listItems[i].style.color = "grey";
-        }
+        // for (let i = 0; i < listItems.length; i += 2) {
+        //     listItems[i].style.color = "grey";
+        // }
         // TODO: Set text color of li with dbid = 1 to blue
-        listItems[0].style.color = 'blue';
+        // listItems[0].style.color = 'blue';
 
         // TODO: Uncomment the next line and get all elements with class name sub-paragraph
         var subParagraphs = document.getElementsByClassName(`sub-paragraph`);
 
         // TODO: Change the text in the first sub paragraph to "Mission Accomplished!"
-        subParagraphs[0].innerText = "Mission Accomplished!"
+        // subParagraphs[0].innerText = "Mission Accomplished!"
+
+
+
+
+        let theButton1 = document.querySelector("button");
+
+        var buttonOne = function(event){
+            mainHeader.innerText = `Javascript is Cool`
+        }
+        document.getElementById('btn1').addEventListener('click', buttonOne)
+
+        //The following code doesnt work. I am trying to revert the header back to its original form
+        // var remover = function(event) {
+        //     btn1.removeEventListener('click', buttonOne)
+        // }
+        // document.getElementById('btn1').removeEventListener('click', remover)
+
+
+
+
+
+
+
+
+
+
+
+
+        let theButton2 = document.querySelector("button");
+        var buttonTwo = function(event){
+            subHeader.style.color = 'blue';
+        }
+        document.getElementById('btn2').addEventListener('click', buttonTwo)
+
+
+
+        let theButton3 = document.querySelector("button");
+        var buttonThree = function(event){
+            for (let i = 0; i < listItems.length; i += 2) {
+                listItems[i].style.color = "grey";
+            }   listItems[0].style.color = 'blue';
+        }
+        document.getElementById('btn3').addEventListener('click', buttonThree)
+
+
+
+        let theButton = document.querySelector("button");
+        var buttonFour = function(event){
+            subParagraphs[0].innerText = "Mission Accomplished!"
+        }
+        document.getElementById('btn4').addEventListener('click', buttonFour)
+
+
+
 
     })();
 </script>
