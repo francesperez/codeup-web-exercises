@@ -111,7 +111,7 @@ let theButton = document.querySelector("button");
 // handler, or also called callback.
 //The function contains the instructions that will run when the event is triggered.
 function eventHandler(){
-    alert("You clicked me!");
+    document.querySelector('p').innerText = "You changed me";
 }
 
 //3. Register the handler
@@ -119,6 +119,8 @@ function eventHandler(){
 
 // theButton.addEventListener('click', eventHandler)
 theButton.onclick = eventHandler;
+
+
 
 
 // Register an event handler and write its code such that when you click on the square, it
