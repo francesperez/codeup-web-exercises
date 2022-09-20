@@ -211,8 +211,30 @@ function convertAddressToObject (addressString){
     }
 }
 
+// Count total pets
+// Write a function named totalPets that accepts an array of objects where each object represents a person, and has a 'pets' property for their owned pets. The function should return the sum of every object's numPets property.
+//
+//  Examples
+//
+ peopleAndPets = [
+       {name: 'Fernando Mendoza', pets: 1},
+       {name: 'Douglas Hirsh', pets: 8},
+       {name: 'Kenneth Howell', pets: 2}
+    ]
 
+// function totalPets(arrayOfObjects) {
+//     let total = 0;
+//     arrayOfObjects.forEach(function(object) {
+//         total += object.pets;
+//     });
+//     return total;
+// }
 
+function totalPets(arrayOfObjects) {
+    return arrayOfObjects.reduce(function(acc, currentValue) {
+        return acc + currentValue.pets;
+    }, 0)
+}
 
 
 
