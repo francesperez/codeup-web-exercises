@@ -193,6 +193,23 @@ function createObject(attendanceObject) {
 }
 
 
+// Convert Address to Object
+// Write a function named convertAddressToObject that accepts a string that contains a street number (as a string) and street name separated by a space characters, and returns an object with properties streetNumber and streetName.
+//
+// Examples:
+// convertAddressToObject('8646 Sunny Oaks') ➞ {streetNumber: '8646', streetName: 'Sunny Oaks'}
+// convertAddressToObject('5408 Villa Nueva') ➞ {streetNumber: '5408', streetName: 'Villa Nueva'}
+
+
+//We are going to use indexOf and substring for this problem. This counts the numbers in the string and stops when the
+// numbers end.
+
+function convertAddressToObject (addressString){
+    return {
+        streetNumber: addressString.substring(0, addressString.indexOf(' ')),
+        streetName: addressString.substring( addressString.indexOf(' ') + 1)
+    }
+}
 
 
 
