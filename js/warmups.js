@@ -31,80 +31,80 @@
 
 //WARMUPS #2
 // Write a function, calculateTotalStudents, that returns the total number of students recorded in the classes array.
-let classes = [
-    {class: "6th grade history", students: 18},
-    {class: "7th grade history", students: 20},
-    {class: "8th grade history", students: 22}
-];
-
-function calculateTotalStudents(){
-    let sum = 0;
-    for (let index = 0; index < classes.length; index++) {
-        sum += classes[index].students;
-    }
-    return sum
-}
-console.log(calculateTotalStudents())
+// let classes = [
+//     {class: "6th grade history", students: 18},
+//     {class: "7th grade history", students: 20},
+//     {class: "8th grade history", students: 22}
+// ];
+//
+// function calculateTotalStudents(){
+//     let sum = 0;
+//     for (let index = 0; index < classes.length; index++) {
+//         sum += classes[index].students;
+//     }
+//     return sum
+// }
+// console.log(calculateTotalStudents())
 
 // // Write a function called convertToObject that takes in a string that is the name of a class, and a number that is the number of students, and returns an object with the properties `class` and `students`
 //
 // //convertToObject("Intro to Programming", 20) returns {class: "Intro to Programming", students: 20}
 //
-function convertToObject(x, y){
-    return {class: x, number: y};
-}
+// function convertToObject(x, y){
+//     return {class: x, number: y};
+// }
 //
 //
 //
 // // Write a function that takes a neighborhood object and determines if it is desirable. A neighborhood is desirable if the median home price is less than 300000, crime rates are low, and the total rating of schools is at least 24.
 
-var neighborhood1 ={
-    neighborhood: "Lovely Estates",
-    medianHomePrice: 280000,
-    pool: true,
-    tennis: false,
-    crimeRate: "low",
-    schools: [
-        {name: "ES1", rating: 8},
-        {name: "MS2", rating: 6},
-        {name: "HS3", rating: 8}
-    ]
-}
-
-var neighborhood2 ={
-    neighborhood: "Luminous Estates",
-    medianHomePrice: 270000,
-    pool: true,
-    tennis: false,
-    crimeRate: "low",
-    schools: [
-        {name: "ES1", rating: 8},
-        {name: "MS2", rating: 8},
-        {name: "HS3", rating: 8}
-    ]
-}
-
-var neighborhood3 ={
-    neighborhood: "Ginormous Ego Estates",
-    medianHomePrice: 350000,
-    pool: true,
-    tennis: true,
-    crimeRate: "low",
-    schools: [
-        {name: "ES1", rating: 9},
-        {name: "MS2", rating: 9},
-        {name: "HS3", rating: 9}
-    ]
-}
-
-
-function desirableNeighborhood(neighborhoodObject){
-    var totalRating = 0;
-    for (var i = 0; i < neighborhoodObject.schools.length; i++){
-        totalRating += neighborhoodObject.schools[i].rating;
-    }
-    return neighborhoodObject.medianHomePrice < 300000 && neighborhoodObject.crimeRate === "low" && totalRating >= 24;
-}
+// var neighborhood1 ={
+//     neighborhood: "Lovely Estates",
+//     medianHomePrice: 280000,
+//     pool: true,
+//     tennis: false,
+//     crimeRate: "low",
+//     schools: [
+//         {name: "ES1", rating: 8},
+//         {name: "MS2", rating: 6},
+//         {name: "HS3", rating: 8}
+//     ]
+// }
+//
+// var neighborhood2 ={
+//     neighborhood: "Luminous Estates",
+//     medianHomePrice: 270000,
+//     pool: true,
+//     tennis: false,
+//     crimeRate: "low",
+//     schools: [
+//         {name: "ES1", rating: 8},
+//         {name: "MS2", rating: 8},
+//         {name: "HS3", rating: 8}
+//     ]
+// }
+//
+// var neighborhood3 ={
+//     neighborhood: "Ginormous Ego Estates",
+//     medianHomePrice: 350000,
+//     pool: true,
+//     tennis: true,
+//     crimeRate: "low",
+//     schools: [
+//         {name: "ES1", rating: 9},
+//         {name: "MS2", rating: 9},
+//         {name: "HS3", rating: 9}
+//     ]
+// }
+//
+//
+// function desirableNeighborhood(neighborhoodObject){
+//     var totalRating = 0;
+//     for (var i = 0; i < neighborhoodObject.schools.length; i++){
+//         totalRating += neighborhoodObject.schools[i].rating;
+//     }
+//     return neighborhoodObject.medianHomePrice < 300000 && neighborhoodObject.crimeRate === "low" && totalRating >= 24;
+// }
 
 
 // Bonus -- a real headscratcher -- the beeramid
@@ -125,35 +125,72 @@ function desirableNeighborhood(neighborhoodObject){
 
 
 
-function beeramid(bonus, price) {
-  let cans = 1,
-     sum = 0;
-  while (sum <= (bonus - (bonus % price)) / price) {
-    sum += cans ** 2;
-    cans++;
-  }
-  return cans - 2;
-};
-
-console.log(beeramid(1070,2));
-console.log(beeramid(9222,2));
+// function beeramid(bonus, price) {
+//   let cans = 1,
+//      sum = 0;
+//   while (sum <= (bonus - (bonus % price)) / price) {
+//     sum += cans ** 2;
+//     cans++;
+//   }
+//   return cans - 2;
+// };
+//
+// console.log(beeramid(1070,2));
+// console.log(beeramid(9222,2));
 
 // Complete the square sum function so that it squares each number passed into it and then sums the results together.
 //
 //     For example, for [1, 2, 2] it should return 9 because 1^2 + 2^2 + 2^2 = 9.
 
-function squareSum(array) {
-    var sum = 0,
-        i = array.length;
-    while (i--)
-        sum += Math.pow(array[i], 2);
-    return sum;
+// function squareSum(array) {
+//     var sum = 0,
+//         i = array.length;
+//     while (i--)
+//         sum += Math.pow(array[i], 2);
+//     return sum;
+// }
+
+const attendance = {
+    miami: 32789,
+    buffalo: 45678,
+    portland: 24567,
+}
+
+//Given the attendance object, write a function that returns the total attendance across all teams
+function totalAttendance(attendanceObject) {
+    let attendanceArray = Object.values(attendance);
+    let total = 0;
+    attendanceArray.forEach(function(attendance) {
+        total += attendance;
+    });
+    return total;
 }
 
 
+//Given the attendance object, write a function that returns the average attendance
+function averageAttendance(attendanceObject) {
+    let total = 0;
+    for (const prop in attendance){
+        total += attendance[prop];
+    }
+    return total/Object.keys(attendance).length;
+}
 
+console.log(averageAttendance(attendance))
 
+//Given the attendance object, write a function that returns an object with totalAttendance and averageAttendance
+// properties set to the correct values
 
+function createObject(attendanceObject) {
+    let total = 0;
+    for (const prop in attendance){
+        total += attendance[prop];
+    }
+    return {
+        totalAttendance: total,
+        averageAttendance: total/Object.keys(attendance.length)
+    }
+}
 
 
 
