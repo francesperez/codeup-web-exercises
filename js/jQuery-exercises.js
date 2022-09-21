@@ -40,7 +40,9 @@
 //Using jQuery, set the font-size of all li elements to 20px.
 $('li').css('font-size', '20px');
 
-//Craft selectors that highlight all the h1, p, and li elements.
+//MULTIPLE Selectors
+//Combine your selectors that highlight all the h1, p, and li elements.
+// Craft selectors that highlight all the h1, p, and li elements.
 $("h1, p, li").css('background-color', '#FFFF00');
 
 
@@ -49,4 +51,6 @@ $(function () {
     let $h1alert = $('#h1').html();
     alert($h1alert);
 })
+
+
 
