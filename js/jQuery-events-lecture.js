@@ -21,12 +21,12 @@ $(function(){
       });
 
 //We can add a class made in the css file to the document
-      $('.box').hover(function(){
-         $(this).addClass("pink");
-      },
-          function(){
-            $(this).removeClass('pink');
-      });
+//       $('.box').hover(function(){
+//          $(this).addClass("pink");
+//       },
+//           function(){
+//             $(this).removeClass('pink');
+//       });
 
 //OLD CODE
 // $('.box').hover(function(){
@@ -40,6 +40,20 @@ $(function(){
       alert('you just pressed a keydown!');
         console.log(e.originalEvent.key);
     });
+
+
+//We can add a toggle class instead of writing an add and remove class!
+    $('.box').hover(function(){
+            $(this).toggleClass("pink");
+        });
+
+    console.log($('div').text());
+    console.log($('div').html());
+    $('div p').text("I can set it to say this!");
+    $('p').after("<ul><li>haha</li><li>lmao</li></ul><br>")
+
+
+
 
 });
 
