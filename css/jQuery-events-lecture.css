@@ -1,0 +1,10 @@
+.box {
+    height: 500px;
+    width: 500px;
+    border: 1px solid black;
+    margin: 15px auto;
+}
+
+.pink {
+    background-color: rgba(255, 165, 244, 0.97);
+}
