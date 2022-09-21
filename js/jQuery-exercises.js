@@ -6,10 +6,10 @@
 //ID Selectors
 
 //Use jQuery to select an element by the id. Alert the contents of the element.
-// $(function () {
+$(function () {
 //     let $h1alert = $('#h1').html();
 //     alert($h1alert);
-// })
+//
 
 //Update the jQuery code to select and alert a different id.
 // $(function () {
@@ -47,10 +47,10 @@ $("h1, p, li").css('background-color', '#FFFF00');
 
 
 //Create a jQuery statement to alert the contents of your h1 element(s).
-$(function () {
-    let $h1alert = $('#h1').html();
-    alert($h1alert);
-})
 
+    let $h1alert = $('#h1').html();
+    alert($h1alert)
+
+})
 
 
