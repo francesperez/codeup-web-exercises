@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Intro to AJAX</title>
+    <link rel = "icon" href="img/favicon.ico">
+  <style>
+    #murals-info {
+      margin: 10px auto;
+      border: 5px ridge blueviolet;
+      padding: 15px;
+      width: 25%;
+      text-align: center;
+    }
+    #murals-info:hover {
+      cursor: pointer;
+      background-color: aliceblue;
+    }
+
+    #murals-cards {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    .card {
+        display: flex;
+        flex-direction: column;
+        border: 2px solid darkgray;
+        padding: 5px;
+        width: 330px;
+    }
+  </style>
+</head>
+<body>
+<section id="murals-info">
+    <p>Murals Information</p>
+</section>
+<section id="murals-cards">
+
+</section>
+
+
+<script src="../js/jquery-3.6.1.min.js"></script>
+<script>
+
+
+//WHENEVER WE CLICK, THE AJAX DATA IS BEING TARGETED. WHAT CAN WE DO WITH THIS DATA BESIDES CONSOLE.LOGGING?
+//IDEALLY WE WANT TO DISPLAY THIS INFORMATION IN A USEFUL MANNER.
+  $("#murals-info").click(function(){
+    $.ajax("/data/mural.json").done(function(data){
+
+//WHAT IS THIS DATA WE ARE REFERRING TO? IN THE MURAL.JSON FILE, WE CAN SEE AL THE ARRAY ELEMENTS. THE FIRST ARRAY ELEMENT, FOR EXAMPLE, IS TILT BY JOHN PITTMAN WEBBER. SO WHEN WE PUT DATA[0], WE WOULD JUST SEE THAT OBJECT. IF WE WANT TO OUTPUT EACH ELEMENT SEQUENTIALLY RATHER THAN ALL AT ONCE, WE CAN USE AN ARRAY METHOD, LIKE A FOR EACH LOOP.
+        data.forEach(function(mural){
+            console.log(mural.artwork_title ? mural.artwork_title : "Untitled");
+//could also be written with a nullish coalescent (??)
+//console.log(mural.artwork_title ?? "Untitled")
+            console.log(mural.artist_credit)
+            let title = mural.artwork_title ?? "Untitled";
+//To .append means to insert html into the page
+            $("#murals-cards").append(
+                `<article class="card">
+                    <p>${title}</p>
+                    <p>${mural.artist_credit}</p>
+                </article>`
+            )
+        });
+    });
+  })
+
+
+</script>
+</body>
+</html>

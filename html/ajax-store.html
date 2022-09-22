@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Online Store</title>
+
+    <style>
+        h1  {
+            display: flex;
+            justify-content: center;
+        }
+        #products {
+            margin: 10px auto;
+            border: 5px ridge #ff0000;
+            padding: 15px;
+            width: 25%;
+            text-align: center;
+        }
+        .cards {
+            display: flex;
+            flex-direction: column;
+            border: 1px solid #000000;
+            background: none;
+            padding: 5px;
+            width: 330px;
+            font-weight: normal;
+        }
+
+
+    </style>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+
+</head>
+<body>
+
+<div class="container bg-light py-5 px-3" id="main-heading" style="background-image:
+url('../img/tools.jpeg'); height:280px">
+    <h1 class="display-3 mt-5 text-center bg-light bg-opacity-75">My Tool Store</h1>
+</div>
+
+<button class="d-flex mx-auto">Refresh</button>
+<table id="products" class="table">
+    <thead>
+        <tr>
+            <th id="titles">Title</th>
+            <th id="quantities">Quantity</th>
+            <th id="prices">Price</th>
+            <th id="categories">Categories</th>
+        </tr>
+    </thead>
+    <tbody id="insertProducts"></tbody>
+</table>
+<script src="https://code.jquery.com/jquery-2.2.4.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+
+<script>
+(function() {
+    "use strict";
+    // TODO: Create an AJAX GET request for the file under data/inventory.json
+    $("button").click(function(){
+    $.ajax("/data/inventory.json").done(function(data){
+
+
+        data.forEach(function(inventory){
+
+            let title = inventory.title;
+            let quantity = inventory.quantity;
+            let price = inventory.price;
+            let categories = inventory.categories;
+            $("#titles").append(
+                `<article class="cards">
+                    <p>${title}</p>
+                </article>`
+            ),
+                $("#quantities").append(
+                    `<article class="cards">
+                    <p>${quantity}</p>
+                </article>`
+                ),
+                $("#prices").append(
+                `<article class="cards">
+                    <p>${price}</p>
+                </article>`
+            ),
+                $("#categories").append(
+                `<article class="cards">
+                    <p>${categories}</p>
+                </article>`
+                )
+            });
+        });
+    });
+})();
+</script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+</body>
+</html>
