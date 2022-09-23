@@ -16,5 +16,15 @@
             "sugar"
         ],
         "date": "February 14, 2015"
-    }
+    }, {
+    "title": "The Third Post",
+    "content": "Ugh! I finally completed this exercise. It only took me about, oh, I dunno, like two hours! I don't even think it really looks all that good, but at least it's pretty right? I wish I could make the background paper lines to be aligned with the text but beggars can't be choosers I guess.",
+    "categories": [
+        "school",
+        "codeup",
+        "ranting",
+        "exercise"
+    ],
+    "date": "September 23, 2022"
+}
 ]
