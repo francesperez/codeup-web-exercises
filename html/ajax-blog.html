@@ -51,19 +51,19 @@
                     let categories = blog.categories;
                     $("#posts").append(
                         `<p>
-                    <h1 class="display-1" style="background-color: #ffe1e7">${title}<img class="typing" src="/img/blinkng-typing.gif"></h1>
-                </p>`
-                    ),
-                        $("#posts").append(
-                            `<div style="background-color: pink"><p>
-                    <p class="container " style="background-image:url('../img/Page.jpeg'); height:250px; opacity: 0.8">${content}</p>
-                </p></div>`
-                        ),
-                        $("#posts").append(
-                            `<p>
-                                <p class="tags d-flex justify-content-end mx-5" style="background-color: #fae3e8">${date}<br>Tags:${categories}</p>
-                                </p><hr><img class="d-flex mx-auto" src="/img/xoxo.png" style="height: 200px; ">`
-                        )
+                            <h1 class="display-1" style="background-color: #ffe1e7">${title}<img class="typing" src="/img/blinkng-typing.gif"></h1>
+                                <div style="background-color: pink">
+                                    <p>
+                                        <p class="container " style="background-image:url('../img/Page.jpeg'); height:250px; opacity: 0.8">${content}</p>
+                                    </p>
+                                </div>
+                            </p>
+                        <p>
+                            <p class="tags d-flex justify-content-end mx-5" style="background-color: #fae3e8">${date}<br>Tags:${categories}</p>
+                        </p>
+                        <hr>
+                        <img class="d-flex mx-auto" src="/img/xoxo.png" style="height: 200px; ">`
+                    )
                 });
             });
     });
