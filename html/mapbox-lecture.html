@@ -16,6 +16,14 @@
         height: 400px;
       }
 
+      .marker {
+          background-image: url('/img/mapbox-icon.png');
+          background-size: cover;
+          width: 50px;
+          height: 50px;
+          border-radius: 50%;
+          cursor: pointer;
+      }
     </style>
 </head>
 <body>
@@ -27,6 +35,12 @@
     <input type="text" name="zoom" id="zoom" class="my-2">
     <button id="zoomSubmit">Submit</button>
 </form>
+<form class="mx-auto mt-2 w-25">
+    <label for="setMarker">Enter an address</label>
+    <input type="text" name="setMarker" id="setMarker" class="my-2">
+    <button id="setMarkerButton">Set Marker</button>
+</form>
+
 
 <script>
   mapboxgl.accessToken = MAPBOX_API_TOKEN;
@@ -54,6 +68,26 @@
       const codeupPopup = new mapboxgl.Popup()
           .setHTML(`<p class="mt-3" style="width:250px">Codeup</p>`);
       codeupMarker.setPopup(codeupPopup);
+
+
+      let coords;
+      function getCoords(address, token){
+          geocode(address,token).then(function(coordinates){
+              console.log(coordinates);
+              coords = coordinates;
+          })
+      }
+      getCoords("407 Emerald Lake, Laredo Texas", MAPBOX_API_TOKEN);
+        console.log(coords);
+
+        document.getElementById("setMarkerButton").addEventListener('click', function (e){
+            e.preventDefault();
+            const address = document.getElementById("setMarker").value;
+            geocode(address, MAPBOX_API_TOKEN).then(function(coordinates){
+                const userMarker = new mapboxgl.Marker().setLngLat(coordinates).addTo(map);
+                map.setCenter(coordinates);
+            })
+        })
 
 
 </script>
