@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="utf-8" />
-  <title>Demo: Add custom markers in Mapbox GL JS</title>
+  <title>Mapbox Practice</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <link
           href="https://fonts.googleapis.com/css?family=Open+Sans"
@@ -14,16 +14,12 @@
           rel="stylesheet"
   />
   <style>
-    body {
-      margin: 0;
-      padding: 0;
-    }
+
     #map {
-      position: absolute;
-      top: 0;
-      bottom: 0;
-      width: 100%;
+      width: 75%;
+      height: 400px;
     }
+
     .marker {
       background-image: url('/img/mapbox-icon.png');
       background-size: cover;
@@ -54,22 +50,22 @@
         'type': 'Feature',
         'geometry': {
           'type': 'Point',
-          'coordinates': [-77.032, 38.913]
+          'coordinates': [-99.4807092, 27.5904761]
         },
         'properties': {
           'title': 'Mapbox',
-          'description': 'Washington, D.C.'
+          'description': 'Arandas '
         }
       },
       {
         'type': 'Feature',
         'geometry': {
           'type': 'Point',
-          'coordinates': [-122.414, 37.776]
+          'coordinates': [-99.445400, 27.559740]
         },
         'properties': {
           'title': 'Mapbox',
-          'description': 'San Francisco, California'
+          'description': 'Taco Palenque'
         }
       }
     ]
@@ -78,7 +74,7 @@
   const map = new mapboxgl.Map({
     container: 'map',
     style: 'mapbox://styles/mapbox/light-v10',
-    center: [-96, 37.8],
+    center: [-99.4807092, 27.5904761],
     zoom: 3
   });
 
