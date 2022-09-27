@@ -9,6 +9,7 @@
     <script src='https://api.mapbox.com/mapbox-gl-js/v2.10.0/mapbox-gl.js'></script>
     <link href='https://api.mapbox.com/mapbox-gl-js/v2.10.0/mapbox-gl.css' rel='stylesheet' />
     <script src="/js/mapbox-geocoder-utils.js"></script>
+
     <style>
         #map {
             width: 75%;
@@ -25,19 +26,22 @@
         }
 
     </style>
+    <link rel="stylesheet" href="../css/weather_map.css">
 </head>
 <body>
+
 <form class="mx-auto text-center mt-2 w-25">
     <label for="setMarker">Enter an address</label>
-    <input type="text" name="setMarker" id="setMarker" class="my-2">
-    <button id="setMarkerButton">Set Marker</button>
+    <input type="text" name="setMarker" id="setMarker" class="input_text my-2">
+    <button id="setMarkerButton" class="submit" >Set Marker</button>
 </form>
 
-<div class="d-inline-flex flex-nowrap row"></div>
+<div class="d-inline-flex flex-nowrap row mx-auto"></div>
 
 <div class="container mx-auto">
     <div id='map' class="mx-auto mt-4"></div>
 </div>
+
 
 
 
