@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Weather Map</title>
+    <script src="/js/keys.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <script src="/js/keys.js"></script>
+    <script src='https://api.mapbox.com/mapbox-gl-js/v2.10.0/mapbox-gl.js'></script>
+    <link href='https://api.mapbox.com/mapbox-gl-js/v2.10.0/mapbox-gl.css' rel='stylesheet' />
+    <script src="/js/mapbox-geocoder-utils.js"></script>
+    <style>
+        #map {
+            width: 75%;
+            height: 400px;
+            margin-bottom: 2em;
+        }
+        .marker {
+            background-image: url('/img/pointingDown.png');
+            background-size: cover;
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            cursor: pointer;
+        }
+
+    </style>
+</head>
+<body>
+<form class="mx-auto text-center mt-2 w-25">
+    <label for="setMarker">Enter an address</label>
+    <input type="text" name="setMarker" id="setMarker" class="my-2">
+    <button id="setMarkerButton">Set Marker</button>
+</form>
+
+<div class="d-inline-flex flex-nowrap row"></div>
+
+<div class="container mx-auto">
+    <div id='map' class="mx-auto mt-4"></div>
+</div>
+
+
+
+<script src="../js/jquery-3.6.1.min.js"></script>
+<script src="/js/weather_map.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+
+</body>
+</html>
