@@ -55,7 +55,7 @@ $(function() {
         let hour = appendLeadingZeroes(dateTime.getHours());
         let minutes = appendLeadingZeroes(dateTime.getMinutes());
         let seconds = appendLeadingZeroes(dateTime.getSeconds());
-        let formattedDateTime = month + " " + day + " " + year + " ";
+        let formattedDateTime = month + " " + day + ", " + year + " ";
         return formattedDateTime;
     }
 
@@ -76,7 +76,7 @@ $(function() {
                         <div class="card-body">
                             <h5 class="card-text text-center">Weather for <br>${data.city.name}</h5>
                                 <ul class="list-group list-group-flush" style="border-radius: 20px;">
-                                    <li class="list-group-item temp" style="  background-color: #fc9898; color: white">Temperature: ${data.list[index].main.temp} F</li>
+                                    <li class="list-group-item temp" style="  background-color: #fc9898; color: white">Temperature: ${(data.list[index].main.temp).toFixed()} F</li>
                                     <li class="list-group-item desc" style="background-color: #dc8585; color: white">Weather: ${data.list[index].weather[0].main}</li>
                                     
                                     <li class="list-group-item desc" style="background-color: #b06969; color: white">Humidity: ${data.list[index].main.humidity}%</li>

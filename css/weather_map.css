@@ -47,9 +47,17 @@ body {
     display: none;
 }
 
+.logo {
+    position: fixed;
+    right: 0px;
+    bottom: 10px;
+}
 
-
-
+.links {
+    margin-left: 40px;
+    margin-bottom: 10px;
+    margin-top: 10px
+}
 
 .search-box{
     width: fit-content;
