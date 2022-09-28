@@ -38,24 +38,53 @@ $(function() {
         return cardinalDirection;
     }
 
+    function appendLeadingZeroes(n){
+        if(n <= 9){
+            return "0" + n;
+        }
+        return n;
+    }
+
+    const months = ["JAN", "FEB", "MAR","APR", "MAY", "JUN", "JUL", "AUG", "SEP", "OCT", "NOV", "DEC"];
+
+    function formatTime(timeStamp){
+        let dateTime = new Date(timeStamp * 1000);
+        let year = dateTime.getFullYear();
+        let month = months[dateTime.getMonth()];
+        let day = dateTime.getDate();
+        let hour = appendLeadingZeroes(dateTime.getHours());
+        let minutes = appendLeadingZeroes(dateTime.getMinutes());
+        let seconds = appendLeadingZeroes(dateTime.getSeconds());
+        let formattedDateTime = month + " " + day + " " + year + " ";
+        return formattedDateTime;
+    }
+
+
+
+
     function printWeather(data) {
+
         //This empties out the card
         $(".row").empty();
         data.list.forEach((forecast, index) => {
+            let timeStamp = data.list[index].dt;
             if (index % 8 === 0) {
                 $('.row').append(`
-                        <div class="mt-3 card" style="width: 18rem;">
-                            <img class="card-img-top d-flex mx-auto" src="http://openweathermap.org/img/w/${data.list[index].weather[0].icon}.png"  alt="Card image cap" style="height: 150px; width: 150px">
-                                <h6 class="card-header text-center name" id="name" style="width: 100%">${(data.list[index].dt_txt).split(' ')[0]}</h6>
-                            <div class="card-body">
-                                <h5 class="card-text text-center">Current Weather for ${data.city.name}</h5>
-                                    <ul class="list-group list-group-flush">
-                                        <li class="list-group-item temp">Temperature: ${data.list[index].main.temp}</li>
-                                        <li class="list-group-item desc">Weather: ${data.list[index].weather[0].description}</li>
-                                        <li class="list-group-item">Wind: ${windCardinalDirection(data.list[index].wind.deg)}</li>
-                                    </ul>
-                            </div>
+                    <div class="mt-3 mb-5 card" style="width: 16rem; border-radius: 50px; background-image: linear-gradient(#fc9898, #c94a4a, #fc9898);">
+                        <img class="card-img-top d-flex mx-auto" src="http://openweathermap.org/img/w/${data.list[index].weather[0].icon}.png"  alt="Card image cap" style="height: 120px; width: 120px">
+                            <h6 class="card-header text-center name" id="name" style="width: 70%; border-radius: 20px; margin: auto">${formatTime(timeStamp)}</h6>
+                        <div class="card-body">
+                            <h5 class="card-text text-center">Weather for <br>${data.city.name}</h5>
+                                <ul class="list-group list-group-flush" style="border-radius: 20px;">
+                                    <li class="list-group-item temp" style="  background-color: #fc9898; color: white">Temperature: ${data.list[index].main.temp} F</li>
+                                    <li class="list-group-item desc" style="background-color: #dc8585; color: white">Weather: ${data.list[index].weather[0].main}</li>
+                                    
+                                    <li class="list-group-item desc" style="background-color: #b06969; color: white">Humidity: ${data.list[index].main.humidity}%</li>
+                                    
+                                    <li class="list-group-item" style="background-color: #884949; color: white">Wind: ${windCardinalDirection(data.list[index].wind.deg)}</li>
+                                </ul>
                         </div>
+                    </div>
                 `);
             }
         });
@@ -83,24 +112,55 @@ $(function() {
 
 
     mapboxgl.accessToken = MAPBOX_MAPS_API;
+    const coordinates = document.getElementById('coordinates');
     const map = new mapboxgl.Map({
-        container: 'map', // container ID
-        style: 'mapbox://styles/mapbox/outdoors-v11',
-        center: [-99.459530, 27.578510],
+        container: 'map',
+// Choose from Mapbox's core styles, or make your own style with Mapbox Studio
+        style: 'mapbox://styles/francesperez/cl8lw0e57003w15pc4m0ordfp',
+        center: [-98.48527, 29.423017],
         zoom: 5,
         projection: 'globe'
     });
 
-    map.on('style.load', () => {
-        map.setFog({}); // Set the default atmosphere style
-    });
+
+    const marker = new mapboxgl.Marker({
+        draggable: true
+    })
+        .setLngLat([-98.499530, 29.418510])
+        .addTo(map);
+
+    function returnCorrectLongitude(longitude){
+        if (longitude < -180) {
+            let difference = Math.abs(longitude + 180);
+            longitude = 180 - difference;
+        }
+        if (longitude > 180) {
+            let difference = longitude - 180;
+            longitude = -180 + difference;
+        }
+        return longitude;
+    }
+
+
+    function onDragEnd() {
+        const lngLat = marker.getLngLat();
+        let long = returnCorrectLongitude(lngLat.lng)
+        coordinates.style.display = 'block';
+        coordinates.innerHTML = `Longitude: ${long}<br />Latitude: ${lngLat.lat}`;
+        let coords = [`${long}`, `${lngLat.lat}`]
+        updateWeather(coords)
+    }
+
+    marker.on('dragend', onDragEnd);
+
+
 
     document.getElementById("setMarkerButton").addEventListener('click', function (e){
         e.preventDefault();
         const address = document.getElementById("setMarker").value;
         geocode(address, MAPBOX_MAPS_API).then(function(coordinates){
-            const marker = new mapboxgl.Marker().setLngLat(coordinates).addTo(map);
             map.setCenter(coordinates);
+            marker.setLngLat(coordinates);
             updateWeather(coordinates);
         })
     });

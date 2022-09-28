@@ -9,38 +9,37 @@
     <script src='https://api.mapbox.com/mapbox-gl-js/v2.10.0/mapbox-gl.js'></script>
     <link href='https://api.mapbox.com/mapbox-gl-js/v2.10.0/mapbox-gl.css' rel='stylesheet' />
     <script src="/js/mapbox-geocoder-utils.js"></script>
-
-    <style>
-        #map {
-            width: 75%;
-            height: 400px;
-            margin-bottom: 2em;
-        }
-        .marker {
-            background-image: url('/img/pointingDown.png');
-            background-size: cover;
-            width: 80px;
-            height: 80px;
-            border-radius: 50%;
-            cursor: pointer;
-        }
-
-    </style>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Prompt&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../css/weather_map.css">
 </head>
 <body>
 
-<form class="mx-auto text-center mt-2 w-25">
-    <label for="setMarker">Enter an address</label>
-    <input type="text" name="setMarker" id="setMarker" class="input_text my-2">
-    <button id="setMarkerButton" class="submit" >Set Marker</button>
-</form>
+<nav class="d-flex navbar navbar-light ">
+        <a class="navbar-brand"><img class="title" src="/img/CuteWeather.png"></a>
 
-<div class="d-inline-flex flex-nowrap row mx-auto"></div>
+        <form class="form form-inline d-flex ">
+            <button id="setMarkerButton" class="btn-search"><i class="fas fa-search"></i></button>
 
-<div class="container mx-auto">
-    <div id='map' class="mx-auto mt-4"></div>
+            <input type="text" name="setMarker" id="setMarker" placeholder="Enter a City"
+                   class="input-search " autocomplete="off" style="background-color: #fc9898; color: #ffffff; border: none;
+                   outline-width: 0px;border-radius: 25px; text-align: center">
+        </form>
+
+</nav>
+<div class="container">
+    <div id='map' class="mx-auto mt-4 "></div>
+    <pre id="coordinates" class="coordinates"></pre>
 </div>
+
+<div class="d-flex justify-content-center">
+<div class="d-inline-flex flex-nowrap row gap-3">
+</div>
+</div>
+
+
+
 
 
 
