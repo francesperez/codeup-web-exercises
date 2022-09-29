@@ -46,7 +46,6 @@ $(function() {
     }
 
     const months = ["JAN", "FEB", "MAR","APR", "MAY", "JUN", "JUL", "AUG", "SEP", "OCT", "NOV", "DEC"];
-
     function formatTime(timeStamp){
         let dateTime = new Date(timeStamp * 1000);
         let year = dateTime.getFullYear();
@@ -59,12 +58,9 @@ $(function() {
         return formattedDateTime;
     }
 
-
-
-
     function printWeather(data) {
 
-        //This empties out the card
+//This empties out the card
         $(".row").empty();
         data.list.forEach((forecast, index) => {
             let timeStamp = data.list[index].dt;
@@ -78,9 +74,7 @@ $(function() {
                                 <ul class="list-group list-group-flush" style="border-radius: 20px;">
                                     <li class="list-group-item temp" style="  background-color: #fc9898; color: white">Temperature: ${(data.list[index].main.temp).toFixed()} F</li>
                                     <li class="list-group-item desc" style="background-color: #dc8585; color: white">Weather: ${data.list[index].weather[0].main}</li>
-                                    
                                     <li class="list-group-item desc" style="background-color: #b06969; color: white">Humidity: ${data.list[index].main.humidity}%</li>
-                                    
                                     <li class="list-group-item" style="background-color: #884949; color: white">Wind: ${windCardinalDirection(data.list[index].wind.deg)}</li>
                                 </ul>
                         </div>
@@ -109,8 +103,6 @@ $(function() {
             printWeather(data)
         })
 
-
-
     mapboxgl.accessToken = MAPBOX_MAPS_API;
     const coordinates = document.getElementById('coordinates');
     const map = new mapboxgl.Map({
@@ -118,7 +110,7 @@ $(function() {
 // Choose from Mapbox's core styles, or make your own style with Mapbox Studio
         style: 'mapbox://styles/francesperez/cl8lw0e57003w15pc4m0ordfp',
         center: [-98.48527, 29.423017],
-        zoom: 5,
+        zoom: 1,
         projection: 'globe'
     });
 
@@ -129,6 +121,7 @@ $(function() {
         .setLngLat([-98.499530, 29.418510])
         .addTo(map);
 
+//This is the function that fixes the longitude problem on the globe.
     function returnCorrectLongitude(longitude){
         if (longitude < -180) {
             let difference = Math.abs(longitude + 180);
@@ -144,16 +137,14 @@ $(function() {
 
     function onDragEnd() {
         const lngLat = marker.getLngLat();
+//Recalling the function to correct the longitude to -179.99/179.99
         let long = returnCorrectLongitude(lngLat.lng)
         coordinates.style.display = 'block';
         coordinates.innerHTML = `Longitude: ${long}<br />Latitude: ${lngLat.lat}`;
         let coords = [`${long}`, `${lngLat.lat}`]
         updateWeather(coords)
     }
-
     marker.on('dragend', onDragEnd);
-
-
 
     document.getElementById("setMarkerButton").addEventListener('click', function (e){
         e.preventDefault();
