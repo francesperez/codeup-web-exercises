@@ -66,6 +66,7 @@ const cars = [
     }
 ];
 
+
 const under10k = cars.filter(car => car.mileage <10000);
 
 //Below is called object deconstruction.
@@ -83,10 +84,58 @@ prices.filter(price => price < 10)
 
 
 
-//.reduce
-
-const totalCost = prices.reduce(function(total, price){
+//.reduce introduces an extra parameter.
+const totalCost = prices.reduce(function(total,price){
     return total + price;
 })
 
-console.log(totalCost)
+
+const total = prices.reduce(function(total, price, index){
+    //console.log(`The index is ${index}, the total is ${total.toFixed(2)}, the item price is ${itemPrice}`)
+    return total + price
+})
+$('#output').append(`<p>The total is ${totalCost}</p>`)
+//The function passed to the reduce method takes an extra parameter, the accumulator is often abbreviated "acc".
+
+const averagePrice = prices.reduce((function(accumulator, current, index, array){
+    console.log(accumulator.toFixed(2));
+    accumulator += current;
+    if (index === array.length - 1) {
+        return accumulator/array.length;
+    }
+    return accumulator;
+}))
+//
+// const mileages = cars.reduce((accumulator, car) => {
+//     accumulator.push(car.mileage);
+//     return accumulator;
+// }, []);
+
+// const highestMileage = cars.reduce((accumulator, car, index, array) => {
+//     accumulator.push(car.mileage);
+//     if (index === array.length - 1){
+//         return Math.max.apply(Math, accumulator);
+//     } else {accumulator.push(car.mileage);
+//         return accumulator;
+//     }
+//     }, []);
+// console.log(highestMileage)
+//in the first iteration, it will put the empty array into the accumulator, then the car ito the car variable, then
+// the mileage into the car variable, then push the accumulator
+
+//If we push the car.mileage and return the accumulator, we will get the array. So now we can take that array and
+// reduce IT using an accumulator.
+
+const highestMileage = cars.reduce((accumulator, car) => {
+    //here we used the .reduce to reduce the car reduce to just the mileages.
+    accumulator.push(car.mileage);
+    return accumulator;
+    //next, we are using another reduce; of all the elements in the array, it is trying to find the maximum mileage
+}, []).reduce((accumulator, mileage) => {
+    return Math.max(accumulator, mileage);
+});
+console.log(highestMileage)
+
+
+
+
