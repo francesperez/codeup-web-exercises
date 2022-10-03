@@ -237,7 +237,25 @@ function totalPets(arrayOfObjects) {
 }
 
 
+$(function (){
+//DOM WARMUPS
+//When the user clicks the button that has the text "change heading", the text of the h1 element changes to I pwn
+// the DOM.
 
+    $("button").on('click', function(){
+        // Set the value fetched as the html of header
+        $("h1").text("I pwn the DOM");
+    });
+
+
+// Every time the user enters a character in the input with id "source", that character appears in the <p> element
+// with the id "output"
+
+    $("#source").on('keyup', function(){
+        $("#output").text( $("#source").val());
+    })
+
+});
 
 
 

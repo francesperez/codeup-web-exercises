@@ -82,7 +82,7 @@
     $(".button2").click(function (){
 //What are wwe referencing when we click that button? Our starting point in this case would the ul. We use .each because we want all of them to do what we're telling it to do.
             $("ul").each(function (){
-   //Starting with (this), referencing all the ul's, then the children, sppecifically the last one.
+   //Starting with (this), referencing all the ul's, then the children, specifically the last one.
             $(this).children().last().css("background-color", "yellow");
         });
     })
