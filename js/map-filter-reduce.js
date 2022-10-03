@@ -46,18 +46,39 @@ const emails = users.map(users => users.email);
 console.log(emails)
 
 
-// Use .reduce to get the total years of experience from the list of users. Once you get the total of years you can use the result to calculate the average.
-const totalYears = users.reduce((users, years) => {
-    return users + years.yearsOfExperience;
+// Use .reduce to get the total years of experience from the list of users.
+const totalYears = users.reduce((total, years) => {
+    return total + years.yearsOfExperience;
 }, 0);
 console.log(totalYears)
+
+//Once you get the total of years you can use the result to calculate the average.
+let avg = totalYears / users.length;
+console.log(avg)
 
 
 //Use .reduce to get the longest email from the list of users.
 
-const longest = users.reduce((x,y) => x.length < y.email.length ? y.email : x, ``);
-console.log(longest)
+const longestEmail = users.reduce((currentLongestEmail, user) => {
+    if (currentLongestEmail.length > user.email.length) {
+        return currentLongestEmail
+    } else {
+        return user.email
+    }
+    // this is the shorthand for the above code: return currentLongestEmail.length > user.email.length ?
+    // currentLongestEmail :
+    // user.email;
+});
+console.log(longestEmail);
 
 
 //Use .reduce to get the list of user's names in a single string. Example: Your instructors are: ryan, luis, zach, fernando, justin.
-//??
+let userNames = users.reduce((list, user) => {
+   return list += (user.name + ',')
+}, "Your instructors are: ");
+console.log(userNames)
+
+let userNamesBetter = users.reduce((pre, user, index, usersArray) => {
+    return pre + `${pre ? ', ' : 'Your instructors are: '}${user.name}${(index == (usersArray.length - 1)) ? '.' : ''}`
+}, "")
+console.log(userNamesBetter)
