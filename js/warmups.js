@@ -242,7 +242,7 @@ $(function (){
 //When the user clicks the button that has the text "change heading", the text of the h1 element changes to I pwn
 // the DOM.
 
-    $("button").on('click', function(){
+    $("#heading").on('click', function(){
         // Set the value fetched as the html of header
         $("h1").text("I pwn the DOM");
     });
@@ -257,7 +257,31 @@ $(function (){
 
 });
 
+//When the mouse enters the h2 with the text "Lorem Generator", a paragraph containing lorem appears in the dive with
+// the id of loremParagraphs.
+// $('#loremParagraphs').hover(function(){
+//     $(this).ontoggle("few");
+// });
+
+$('#loremParagraphs h2').mouseenter(function(){
+    $("#loremParagraphs").append("Lorem ipsum dolor sit amet, consectetur adipisicing elit. At deleniti doloremque nobis odio" +
+        " tempore. Cumque doloribus laudantium quam quidem quo tenetur, voluptatibus? Eius eos minus nostrum optio provident. A, necessitatibus!");
+})
 
 
+//When the user clicks on the "Hot Pink It" button, all the text in the div with the id of loremParagraphs becomes hotpink if it's black, or black if it's hotpink.
+
+$('#hotPinkIt').click(function(){
+    $("#loremParagraphs").toggleClass("hotpink");
+});
+
+//// Bonus challenge: when the user clicks on the "Pink Blinky" button, all the text in the div with the id of loremParagraphs alternates between black and hotpink once every three seconds.
+
+
+$(".pinkyblinky").click(function(){
+    setInterval(function(){
+        $("#loremParagraphs").toggleClass('hotpink')
+        }, 3000);
+})
 
 
