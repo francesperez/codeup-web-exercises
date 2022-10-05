@@ -46,6 +46,7 @@ function getBooks (){
 
 getBooks();
 
+//In the project, this should be form driven, rather than 'refresh' driven
 //fetch(booksURL, postOptions).then(getBooks);
 
 //The U in CRUD: Updating with PUT and PATCH requests
@@ -90,11 +91,13 @@ fetch(booksURL + "/1", putOptions).then(getBooks);
 const deleteOptions = {
     method: 'DELETE',
     headers: {
-        'Content-Type' : 'applcation/json'
+        'Content-Type' : 'application/json'
     }
 }
 
 fetch(booksURL + "/1", deleteOptions).then(getBooks);
+
+
 
 
 
